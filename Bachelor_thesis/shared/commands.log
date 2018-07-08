@@ -1,0 +1,25 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.8)  2 JUL 2018 22:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**commands.tex
+(./commands.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+\seccount=\count79
+)
+! Emergency stop.
+<*> commands.tex
+                
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 14 strings out of 493638
+ 106 string characters out of 6146797
+ 53573 words of memory out of 5000000
+ 3515 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 7i,0n,10p,135b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

@@ -1,0 +1,1048 @@
+
+\documentclass[8pt]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{color}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{enumerate}
+
+\usepackage{amssymb}
+\usepackage{mathabx}
+\usepackage{dsfont}
+\usepackage{adforn}
+
+\usetheme{CambridgeUS}        
+\useinnertheme{default} 
+\useoutertheme{default} 
+\usecolortheme{default} 
+
+\usefonttheme{serif}
+\usepackage{fontspec}
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposizione}
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definizione}
+\newtheorem{oss}[thm]{Osservazione}
+
+
+\title[Spettacolo di magia]{Math the magic happen}
+\author{Lorenzo Barban e Carlotta Vielmo}
+\date{11 Giugno 2018}
+\institute[]{Università degli Studi di Trento}
+
+
+
+
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Esp card Trick}
+\begin{frame}\begin{center}
+\textbf{Esp card Trick}
+%\frametitle{Esp card Trick}
+\end{center}\end{frame}
+
+
+\begin{frame}
+
+
+\begin{center}
+\textbf{Le congruenze}
+\end{center}
+\begin{center}
+ 
+
+\medskip
+\bigskip
+
+
+Ad esempio, prendiamo \textbf{12} e \textbf{5}. \\Sappiamo \emph{non} essere multipli... Possiamo tuttavia renderli \textit{uguali}!
+
+$$ \mathbf{12 = 1\times 7 + 5}$$
+
+\medskip
+\smallskip
+
+Diciamo quindi che \textbf{12 è congruo a 5 modulo 7}.
+\end{center}
+\end{frame}
+% * <anna.vallortigara@gmail.com> 2018-06-11T10:50:30.112Z:
+% 
+% Alors al sappiamo... ma possiamo addirittura non si capisce bene... cioè poi boh magari è solo a me che non piace
+% 
+% 
+% io metterei: 
+% sappiamo... possiamo tuttavia renderli uguali!
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:06:44.518Z.
+
+
+\begin{frame}
+\begin{center}
+Se invece consideriamo \textbf{15} e \textbf{6}, possiamo scrivere
+
+$$ 15=9\times 1 + 6$$
+
+\medskip
+\smallskip
+
+Quindi \textbf{15 è congruo a 6 modulo 9}.
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+
+In matematica troviamo una proposizione molto utile
+
+\medskip
+\medskip
+
+\begin{prop}\begin{center}
+$a^p$ è congruo ad $a$ modulo $p$.
+\end{center}\end{prop}
+
+% * <anna.vallortigara@gmail.com> 2018-06-11T10:53:44.663Z:
+% 
+% Qui la sapete la dimo, giusto? E in caso ci spendete due minuti almeno su cosa ci sia dietro alla dimo?
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:07:24.223Z.
+
+\bigskip
+\bigskip
+
+\textbf{Esempio} 
+
+\medskip
+
+$2048$ è congruo a $2$ modulo $11$, se applichiamo la proposizione con $\mathit{a=2}$ e $\mathit{p=11}$; \\ difatti $2^{11} = 2048$.
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Iniziamo ora a studiare la matematica che sta sotto all'effetto appena visto.
+
+\medskip
+\smallskip
+
+Per semplicità, identifichiamo
+
+\begin{itemize}
+\item[]  \begin{center} $\bigovoid = 1$ \end{center}
+\item[]  \begin{center} $\bigplus = 2$ \end{center}
+\item[]  \begin{center} $\iiint =3$ \end{center}
+\item[]  \begin{center} $\bigboxvoid =4$ \end{center} 
+\item[] \begin{center} $\bigstar =5$ \end{center} 
+\end{itemize}
+
+Il numero inizia con le carte disposte nella sequenza \begin{center}
+$1$\quad$2$\quad$3$\quad$4$\quad$5$\quad$1$\quad$2$\quad$3$\quad$4$\quad$5$
+\end{center}
+posti nelle rispettive posizioni
+\begin{center}
+$1$\quad$2$\quad$3$\quad$4$\quad$5$\quad$6$\quad$7$\quad$8$\quad$9$\quad$10$
+\end{center}
+
+\medskip
+\medskip
+
+Notiamo che $\bigovoid$ è alla posizione 1 e 6, $\bigplus$ alla posizione 2 e 7, $\ldots$ 
+ 
+\emph{Ogni simbolo si trova alla posizione $k$ e $k+5$}.
+ \end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+ 
+Ora il mago mescola il mazzetto.
+
+\bigskip
+\bigskip
+\bigskip
+
+\textbf{...ALT!} Lo mescola davvero?
+
+\medskip
+\bigskip
+
+NO! O meglio, non proprio.
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}
+Semplicemente \textit{taglia}, ovvero prende una porzione del mazzetto e lo mette sotto.
+
+\smallskip
+
+Le carte saranno in posizione diversa rispetto a prima, \emph{ma saranno semplicemente traslate}:
+
+\bigskip
+\bigskip
+
+
+\begin{itemize}
+\item[] \begin{center} $\bigovoid = 1 \rightarrow 1+t$ \end{center}
+\item[] \begin{center} $\bigplus = 2 \rightarrow 2+t$ \end{center}  
+\item[] \begin{center} $\iiint =3 \rightarrow 3+t$ \end{center}
+\item[] \begin{center} $\bigboxvoid =4 \rightarrow 4+t$ \end{center}
+\item[] \begin{center} $\bigstar =5 \rightarrow 5+t$ \end{center}
+\end{itemize}
+
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{Esempio} 
+
+\medskip
+\medskip
+
+Supponiamo di ottenere la sequenza $$3\quad 4\quad 5\quad 1\quad 2\quad 3\quad 4\quad 5\quad 1\quad 2$$ con i simboli nelle nuove posizioni
+
+\bigskip
+
+\begin{itemize}
+\item[]  \begin{center} $\iiint \rightarrow 1,\:6 $ \end{center}
+\item[]  \begin{center} $\bigboxvoid \rightarrow 2,\:7 $ \end{center}
+\item[]  \begin{center} $\bigstar \rightarrow$ $3,\:8 $ \end{center}
+\item[]  \begin{center} $\bigovoid \rightarrow 4,\:9 $ \end{center}
+\item[]  \begin{center} $\bigplus \rightarrow 5,\:10 $ \end{center}
+\end{itemize}
+
+\bigskip
+
+\emph{Le carte uguali saranno in posizioni uguali modulo 5}, nonostante il taglio del mazzo!
+% * <anna.vallortigara@gmail.com> 2018-06-11T10:57:50.704Z:
+% 
+% Io metterei nonostante "il taglio" del mazzo
+% 
+% ^.
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Alla fine del numero ogni coppia di carte ha lo stesso simbolo
+
+\medskip
+\smallskip
+
+\emph{E' necessario che, nonostante i vari tagli, \\entrambi i mazzi abbiano 5 carte con tutti i simboli diversi.}
+% * <anna.vallortigara@gmail.com> 2018-06-11T10:59:17.188Z:
+% 
+% Entrambi che? I mazzi? Mettetelo il soggetto, sennò non si capisce
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:38:19.231Z.
+\medskip
+
+Chi ci assicura che questo funzioni sempre?
+
+\medskip
+
+Di nuovo le \textbf{congruenze}!
+
+\bigskip
+\bigskip
+
+Infatti, se dopo i vari tagli la sequenza è, ad esempio
+$$3\quad 4\quad 5\quad 1\quad 2\quad 3\quad 4\quad 5\quad 1\quad 2$$ e la spezziamo in due parti uguali
+$$ 3 \quad 4 \quad 5 \quad 1 \quad 2 \hspace{2 cm} 3\quad 4\quad 5\quad 1\quad 2 $$
+
+Ogni mazzo ha tutti i simboli diversi come voluto! Questo funziona proprio perché, ad esempio, $\bigboxvoid$ è alla posizione 3 e 8, quindi \emph{prima di incontrare la carta uguale, ce ne sono proprio 5 di mezzo, perché 6 è congruo a 1 modulo 5}.
+\end{center}
+\end{frame}
+
+
+\section{Gilbreath principle}
+
+\begin{frame}
+\begin{center} \textbf{Principio di Gilbreath} \end{center}
+\end{frame}
+
+\begin{frame} \begin{center}\textbf{Cosa dice il principio di Gilbreath?}
+
+\medskip
+\bigskip
+
+Intuitivamente, se partiamo con un mazzo opportunamente ordinato, \\mescolandolo verranno mantenute determinate proprietà, \\in particolare verrà mantenuto un ordinamento molto simile a quello iniziale.
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}
+\textbf{Esempio}
+
+\bigskip
+\medskip
+
+Facciamo un esempio considerando come proprietà del mazzo \\l'alternanza di una carta nera e una carta rossa.
+
+\medskip
+\medskip
+
+Partiamo col mazzo alternato e dividiamolo in due, usando la tecnica \\ del \textit{miscuglio di Gilbreath}, che spiegheremo fra poco. \\Per il \textit{principio di Gilbreath}, il mazzo avrà quindi la stessa proprietà iniziale: \\ ogni due carte ci sarà una carta rossa e una carta nera.
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}
+Per passare ad una trattazione rigorosa, dobbiamo prima spiegare cosa sono \\ un \textit{miscuglio di Gilbreath}, una \textit{permutazione} e una \textit{permutazione di Gilbreath}.
+
+\medskip
+\medskip
+
+\begin{defin} Un \textit{miscuglio di Gilbreath} consiste nei due passi seguenti:
+\begin{itemize}
+\item[1)] Dividere un mazzo in due senza tagliarlo a metà, bensì prendendo una carta per volta dalla cima del mazzo e mettendola sopra alla nuova pila di carte che stiamo creando.
+\item[2)] Mescolare il mazzetto creato con il mazzo iniziale.
+\end{itemize}
+\end{defin}
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}\begin{defin}Dati $n$ oggetti distinti, si chiama \textit{permutazione} ogni modo di riordinare questi $n$ oggetti. \end{defin}
+
+\bigskip
+\bigskip
+
+\textbf{Esempio}:
+
+\medskip
+
+Date 3 carte $A$, $2$, $3$, le loro permutazioni sono 6: $A23$, $A32$, $2A3$, $23A$, $3A2$, $32A$. 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{defin}Una \textit{permutazione di Gilbreath} è una permutazione dei numeri da $1$ ad $n$, che possono essere ottenuti attraverso il miscuglio di Gilbreath con un mazzo in cui le carte sono ordinate da $1$ a $n$. \end{defin}
+
+\bigskip
+\bigskip
+
+Vediamo con un esempio pratico cosa intendiamo.
+\end{center}
+\end{frame}
+
+
+\begin{frame}\begin{center}
+\textbf{Esempio}
+
+\bigskip
+\medskip
+
+Prendiamo le carte ordinate 
+
+\medskip
+
+$A$\quad$2$\quad$3$\quad$4$\quad$5$\quad$6$\quad$7$\quad$8$\quad$9$
+
+\bigskip
+
+Usiamo il miscuglio di Gilbreath e disponiamo le carte a faccia in alto sul tavolo. Supponiamo di aver ottenuto la sequenza
+
+\medskip
+
+$6$\quad$5$\quad$7$\quad$4$\quad$3$\quad$8$\quad$9$\quad$2$\quad$A$
+
+\bigskip
+
+Questa è una permutazione di Gilbreath perché tutti i sottoinsiemi di questa sequenza, iniziando da quello contenente solo il $6$ e allargandolo verso destra, \\ contengono numeri consecutivi (non necessariamente in ordine)
+
+\medskip
+
+$6$ \qquad $6 \: 5$ \qquad $6 \: 5 \: 7$ \qquad $6 \: 5 \: 7 \: 4$ \qquad (e via dicendo)
+\end{center}
+\end{frame}
+
+
+\begin{frame}\begin{center}
+\textbf{Esempio}
+
+\bigskip
+\medskip
+
+Facciamo un esempio considerando come proprietà del mazzo \\l'alternanza di una carta nera e una carta rossa.
+
+\medskip
+\medskip
+
+Partiamo col mazzo alternato e dividiamolo in due, \\usando la tecnica del \textit{miscuglio di Gilbreath}.\\Per il \textit{principio di Gilbreath}, il mazzo avrà quindi la stessa proprietà iniziale: \\ ogni due carte ci sarà una carta rossa e una carta nera.
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+\textbf{Per i più temerari}
+
+\bigskip
+
+Enunciamo in modo formale la versione estesa dell'\textit{ultimo principio di Gilbreath}.
+
+\medskip
+
+\begin{thm}
+Per una permutazione $\pi$ di $\{1, 2, 3, \ldots , N \}$, le seguenti quattro proprietà sono equivalenti:
+
+
+
+\begin{itemize}
+\item $\pi$ è una permutazione di Gilbreath.
+\item Per ogni $j\in\{1,...,N\}$, le prime $j$ carte $\{\pi(1), \pi(2), \pi(3), \ldots , \pi(N)\}$ sono distinte modulo $j$.
+\item Per ogni $j,k\in\{1,...,N\}$ con $kj \leq N$, le $j$ carte $\{\pi((k-1)j + 1), \pi((k-1)j +2), \ldots , \pi(kj)\}$ sono distinti modulo $j$.
+\item Per ogni $j\in\{1,...,N\}$, le prime $j$ carte sono consecutive in $1, 2, 3, \ldots , N$.
+\end{itemize}
+\end{thm}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Ora è il vostro turno!}
+
+\bigskip
+
+Che proprietà avrà usato Lorenzo nel suo mazzo per sfruttare il principio di Gilbreath \\ e ottenere alla fine esattamente 24 carte girate, \\ di cui 11 rosse, di cui 5 di quadri, 5 numeriche di cuori e il re di cuori?
+
+\medskip
+\medskip
+
+Pensateci e, se vi viene in mente, fatecelo sapere!
+\end{center}
+\end{frame}
+
+
+
+
+\section{5 Cards Trick by Michael Kleber}
+
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:06:10.595Z:
+% 
+% 5 cards? Ci va una s nel titolo, giacché è in inglese?
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:39:28.646Z.
+
+\begin{frame}
+\begin{center} \textbf{5 Cards Trick by Michael Kleber} \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center} Mescoliamo il mazzo, scegliamo 5 carte \emph{a caso} \\e Marta saprà sempre indovinare l'ultima carta rimanente!
+
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:06:59.707Z:
+% 
+% In mano a chi? Mettiamolo secondo me questo compl. di termine :) In mano "al compagno" o "al volontario". Oppure metterei l'ultima carta "rimanente"
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:42:00.565Z.
+
+\bigskip
+\bigskip
+
+\textbf{...casualità? Ne siamo sicuri?}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Le carte che vengono passate in ordine da Alessandro a Marta sono dei piccoli messaggi in codice e tutto si basa sull'\emph{ordine} con cui le carte vengono passate tra i due maghi.
+
+\bigskip
+
+\textbf{In quanti modi possiamo distruibire 4 carte?}
+
+\bigskip
+
+Contiamoli!
+
+\smallskip
+
+Prima carta $\rightarrow$ 4 modi diversi. 
+
+Seconda carta $\rightarrow$ 3 modi diversi.
+
+Terza carta $\rightarrow$ 2 due modi diversi.
+
+Quarta carta $\rightarrow$ un unico modo.
+
+\smallskip
+
+In termini numerici, abbiamo $$4\times 3\times 2\times 1=24$$ 
+modi diversi di dare le carte a Marta, ovvero 24 \emph{possibili messaggi.}
+
+\smallskip
+
+\emph{Abbiamo un solo modo corretto fra i 24 possibili per far indovinare a Marta \\l'unica carta che alla fine rimarrà in mano ad Alessandro}.
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}\begin{center}
+\textbf{Come scoprire il seme?}
+
+\bigskip
+\bigskip
+
+Sfruttiamo il principio dei cassetti (\textit{Pigeonhole Principle})
+
+\medskip
+
+\center\textbf{\textit{Pigeonhole Principle}}
+
+\begin{block}
+
+Se $n+k$, con $k>0$, oggetti sono messi in $n$ cassetti, allora almeno un cassetto deve contenere più di un oggetto.
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:09:42.210Z:
+% 
+% k>0 (è da specificarsi dite?)
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:44:55.922Z.
+\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}
+\textbf{Esempio}
+
+\bigskip
+\medskip
+
+Supponiamo che 5 amici vogliano partecipare ad un torneo di pallavolo, \\a cui sono ammesse 4 squadre. \\Supponiamo che i 5 amici vogliano giocare in squadre diverse. 
+
+\smallskip
+
+Questo non è possibile!
+
+\smallskip
+
+Infatti, per il \textit{principio dei cassetti} è impossibile suddividerli tra le varie squadre, \\ne troveremo per forza una con due amici.
+\end{center}
+\end{frame}
+
+\begin{frame}\begin{center}
+\textbf{Perché ci è utile il \emph{principo dei cassetti}?}
+
+\medskip
+\medskip
+\medskip
+
+\emph{Prendendo 5 carte qualsiasi, sicuramente almeno 2 avranno lo stesso seme}.
+
+
+Alessandro vede le 5 carte scelte dallo spettatore, invidua le 2 carte con lo \textit{stesso seme} e passa una delle due a Marta. Quella che tiene in mano sarà quella da indovinare.
+
+\bigskip
+
+Quindi, appena Marta riceverà la prima carta, saprà subito il \textbf{seme} di quella finale.
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Come scoprire il valore?}
+
+\medskip
+\medskip
+\medskip
+
+Ci rimangono 3 carte. Vediamo la disposizione corretta. \begin{itemize}
+\item Ordiniamole in ordine crescente e associamo ad ognuna due possibili valori: \\alla più bassa $+1$ e $+2$, a quella intermedia $+3$ e $+4$, alla più alta $+5$ e $+6$. \\ \textit{Consegniamo la carta che contiene il valore della distanza fra la prima data e quella da indovinare}, così Marta sarà indecisa soltanto fra due carte. Ad esempio, se le consegniamo la carta intermedia, Marta saprà che dovrà aggiungere $+3$ o $+4$ al valore della prima carta consegnata.
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{itemize}
+\item Ci rimangono due carte da consegnare. Abbiamo due modi possibili di consegnarle. \emph{Se diamo come prima carta quella di valore più alto, allora Marta capirà di dover sommare alla carta scelta il primo dei due valori} (ovvero $1,3,5$). \\Se invece passa la carta di valore più basso, allora Marta sommerà uno tra i secondi valori (ovvero $2,4,6$).
+
+\end{itemize}
+
+\smallskip
+\medskip
+
+In questo modo, nel momento in cui avrà tutte e 3 le carte in mano, \\Marta riuscirà a scoprire l'esatto valore della carta!
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Esempio}
+
+\medskip
+\bigskip
+
+Supponiamo di avere 
+
+\medskip
+
+$7\spadesuit\quad 3\spadesuit\quad 2\diamondsuit\quad 5\heartsuit\quad 8\ \clubsuit$
+
+\medskip
+\bigskip
+
+
+Alessandro consegna
+
+\smallskip
+
+\begin{itemize}
+\item[1)] per prima carta $3\spadesuit\quad\longrightarrow\quad$Marta sa che la carta è $\spadesuit$
+\item[2)] per seconda carta $5\heartsuit$
+\item[3)] per terza carta $8\clubsuit$
+\item[4)] per quarta carta $2\diamondsuit$
+\end{itemize}
+
+Nel momento in cui Marta riceve le ultime tre carte, \\capisce che $5\heartsuit$ è quella intermedia \\e quindi aggiunge +3 o +4 a $3\spadesuit$. Ora sa che la carta è o $6\spadesuit$ o $7\spadesuit$. \\Riceve $8\clubsuit$ (che è maggiore di $2\diamondsuit$) e capisce che la carta è $7\spadesuit$.
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Problema!}
+
+\medskip
+\medskip
+
+Dalla nostra spiegazione emergono due problemi. Come li risolvereste? 
+
+\begin{itemize}
+\item[1)] Come fare se le due carte dello stesso seme distano più di 6? \\(Un piccolo suggerimento: fate riferimento alla matematica spiegata nei precenti effetti).
+\item[2)] Come fare per ordinare le ultime tre carte se dovessero essere dello stesso valore ma di semi differenti? \\(Esempio: $8\diamondsuit\quad 8\clubsuit\quad 8\heartsuit$).
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Problema!}
+
+\medskip
+\medskip
+
+Dalla nostra spiegazione emergono due (anzi, tre) problemi. Come li risolvereste? 
+
+\begin{itemize}
+\item[1)] Come fare se le due carte dello stesso seme distano più di 6? \\(Un piccolo suggerimento: fate riferimento alla matematica spiegata nei precenti effetti).
+\item[2)] Come fare per ordinare le ultime tre carte se dovessero essere dello stesso valore ma di semi differenti? \\(Esempio: $8\diamondsuit\quad 8\clubsuit\quad 8\heartsuit$).
+\item[3)]  La parte reale di ogni radice non banale di $\zeta(s)$ (zeta di Riemann) è sempre $\frac{1}{2}$? 
+\end{itemize}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+
+
+(In particolare, nel caso risolveste l'ultimo, fatelo sapere prima a noi, mi raccomando ;) )
+\end{center}
+\end{frame}
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:16:24.846Z:
+% 
+% Ma questa si inserisce come dalla precedente? CIoè poi c'è una pausa? Oppure la spiegazione? Perché è davvero carina, ma non capisco come si incolla
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:47:14.729Z.
+
+
+
+\section{Le sequenze di De Bruijn}
+\begin{frame}
+\begin{center}
+\textbf{Le sequenze di De Bruijn}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{Come si svolge l'effetto?}
+
+\bigskip
+\bigskip
+
+Il mago parte con un mazzo opportunamente ordinato.
+
+\smallskip
+
+I 5 spettatori tagliano ripetutamente il mazzo.
+
+\smallskip
+
+Uno per uno ogni spettatore sceglie una carta.
+
+\smallskip
+
+Il mago è in grado di indovinare \textit{tutte} e 5 le carte, \\servendosi di poche domande.
+
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{A livello pratico}
+
+\bigskip
+\bigskip
+
+La domanda veramente rilevante è:
+
+\smallskip
+
+\textit{Quanti hanno visto una carta rossa?}
+
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+\textbf{A livello pratico}
+
+\bigskip
+\bigskip
+
+
+\textit{Quanti hanno visto una carta rossa?}
+
+\bigskip
+
+Consideriamo $$0\: = \: carta \:\: nera$$ $$ 1\: = \: carta \:\: rossa$$
+
+\smallskip
+
+e scriviamo una sequenza di $0$ e $1$ a seconda delle risposte che sentiamo.
+\\Ad esempio se sentiamo \textit{rossa, nera, rossa, rossa, nera} scriviamo  $$1\quad 0\quad 1\quad 1\quad 0\quad$$
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+Come indovinare la \textit{prima} carta dalla sequenza di numeri che abbiamo ottenuto?
+
+\bigskip
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Usiamo questa legenda per il \textit{seme}:
+
+\bigskip
+
+$$ 1\quad 1 \quad\rightarrow\quad \heartsuit$$ $$ 1\quad 0 \quad\rightarrow\quad \diamondsuit$$ $$ 0\quad 1 \quad\rightarrow\quad \spadesuit$$ $$ 0\quad 0 \quad\rightarrow\quad \clubsuit$$
+
+\bigskip
+\bigskip
+
+La sequenza che avevamo considerato come esempio era $1 \quad 0 \quad 1 \quad 1 \quad 0$, \\quindi il nostro seme sarà $\diamondsuit$.
+
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+Usiamo il codice binario per il \textit{valore}:
+
+\bigskip
+\bigskip
+
+Il numero $\: 1\: 1\: 0\:$ è scritto in codice binario, cioè usando solamente le cifre $0$ e $1$. \\Possiamo scriverlo usando le cifre da $1$ a $8$ come
+
+$$1 \times 2^{2} \: + \: 1\times 2^{1} \: + \: 0\times 2^{0} \:= 6$$
+
+\bigskip
+\bigskip
+
+La nostra \textit{prima} carta sarà il 6$\diamondsuit$.
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+Come indovinare le \textit{successive} carte?
+
+\bigskip
+\bigskip
+
+Dalla prima sequenza di numeri otteniamo la sequenza per la seconda carta
+
+\smallskip
+
+
+\medskip
+
+dove $(1+1)_{2}$ significa scrivere:
+
+\smallskip
+ $0$ quando otteniamo $2$ oppure $0$ \\$1$ quando otteniamo $1$
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:19:10.285Z:
+% 
+% Wait, in binario 2 è 10, lo scrivete lo stesso come 1?
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:55:43.466Z.
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+A questo punto abbiamo le prime due sequenze, che vengono lette col metodo spiegato prima.
+
+\bigskip
+
+$$1\quad 0\quad 1\quad 1\quad 0\quad \rightarrow \quad 6\diamondsuit $$
+$$0\quad 1\quad 1\quad 0\quad 0\quad \rightarrow \quad 4\spadesuit $$
+
+\bigskip
+
+Lo stesso metodo si applica alle rimanenti 3 carte.
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{Perché funziona?}
+ 
+\bigskip
+\bigskip
+
+Che cosa ci assicura che queste sequenze di $0$ e $1$ ci diano esattamente quelle carte?
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:20:07.118Z:
+% 
+% Secondo me in italiano è più giusto dire 
+% 
+% che cos'è che...
+% oppure
+% che cosa...
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:56:36.431Z.
+\end{center}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\begin{center}
+\textbf{Le sequenze di \textit{De Bruijn}}
+
+\bigskip
+
+\begin{defin}
+Una \emph{sequenza di De Bruijn di ordine $k$} è una successione di lunghezza $2^k$ di $0$ e $1$ tale che ogni sottoinsieme di $k$ cifre compare una volta sola.
+\end{defin}
+
+
+\bigskip
+
+\textbf{Esempio}
+
+\bigskip
+
+Se $k=2$, la sequenza
+$$0\quad 1\quad 1\quad 0$$
+è di De Bruijn, perchè i sottoinsiemi sono $01$, $11$, $10$ e sono tutti diversi tra loro.
+
+\bigskip
+\bigskip
+
+La sequenza
+$$0\quad 1\quad 1\quad 1$$ 
+\textbf{non} è di De Bruijn poichè i sottoinsiemi $01$, $11$, $11$ non sono tutti diversi.
+
+\bigskip
+
+In particolare, siamo sicuri che se $0110$ va bene, anche $1100$, $1001$, $0011$ vanno bene. 
+
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+
+Sorgono spontanee due domande:
+
+\bigskip
+\bigskip
+
+\begin{itemize}
+\item Esistono \emph{sempre} delle sequenze di de Bruijn per ogni $k$? Se sì, come le costruiamo?
+\item Come mai queste sequenze sono importanti per l'effetto?
+\end{itemize}
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+ \textbf{Esistono \emph{sempre} delle sequenze di de Bruijn per ogni k?} 
+
+\bigskip
+\bigskip
+
+Sì, Le sequenze di de Bruijn esistono sempre. \\Non solo, possiamo anche sapere quante sono per ogni valore di $k$
+$$2^{2^{k-1}-k}$$
+Sfortunatamente però questo risultato non ci dà nessuna indicazione su \emph{come} costruirle.	
+
+
+
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{Come mai queste sequenze sono importanti per l'effetto?}
+
+\bigskip
+\bigskip
+
+Il nostro scopo è trovare un modo per associare ad ogni carta del mazzo \\un'unica sequenza (ad esempio $10110$) che ci permetta di identificare \\non solo la prima carta, ma anche le successive, \\sfruttando la domanda "Quante carte rosse ci sono?".
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{Le sequenze di \textit{De Bruijn} fanno al caso nostro!}
+
+\bigskip
+\bigskip
+
+Applichiamo la definizione di sequenza di \textit{De Bruijn} con $k=5$:
+
+\begin{block}
+
+Una \emph{sequenza di de Bruijn di ordine $5$} è una successione di lunghezza $2^5=32$ di $0$ e $1$ tale che ogni sottoinsieme di $5$ cifre compare una volta sola
+\end{block}
+
+\medskip
+
+Il mago usa un mazzo di 32 carte (4 semi, 8 carte per ogni seme) \\ed è sicuro di poterle ordinare (considerando solo il colore) \\in modo che l'intero mazzo sia una sequenza di \textit{De Bruijn} di carte rosse ($1$) e nere ($0$). 
+
+\smallskip
+
+Quindi, per definizione di sequenza di \textit{De Bruijn}, è sicuro che ad ogni carta corrispondano esattamente 5 cifre \textit{uniche} ("ogni sottoinsieme di 5 cifre compare una volta sola").
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{center}
+\textbf{Come procedere?}
+
+\bigskip
+\bigskip
+
+A questo punto il mazzo è diventato una sequenza di $0$ e $1$. \\Vengono prese 5 carte consecutive e ci viene detto quante (in ordine) sono rosse.
+
+\bigskip
+
+Non ci resta che definire la chiave di lettura che avevamo dato inizialmente. 
+
+\smallskip
+
+Per le prime due cifre definiamo
+$$ 1\quad 1 \quad\rightarrow\quad \heartsuit$$ $$ 1\quad 0 \quad\rightarrow\quad \diamondsuit$$ $$ 0\quad 1 \quad\rightarrow\quad \spadesuit$$ $$ 0\quad 0 \quad\rightarrow\quad \clubsuit$$
+
+\smallskip
+
+da cui otteniamo il seme.
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Per le successive cifre decidiamo di leggerle come se fossero scritte in codice binario, \\cioè $0$ e $1$, e otteniamo il valore della carta.
+
+\bigskip
+\bigskip
+
+Una volta stabilita la carta da cui partire, il gioco è fatto! \\Noi per semplicità abbiamo posto \\$0\quad 0\quad 0\quad 0\quad0 \quad \rightarrow 8\clubsuit$
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+Abbiamo costruito il nostro mazzo e ora, qualsiasi gruppo di 5 carte consecutive scegliamo, siamo sicuri di poterle indovinare solamente chiedendo:
+
+\bigskip
+
+\textbf{\textit{"Quante carte rosse sono presenti?"}}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\textbf{Homework!}
+% * <anna.vallortigara@gmail.com> 2018-06-11T11:24:36.401Z:
+% 
+% Sono ignorante io, ma homeworks non è una parola che va solo al plurale?
+% 
+% ^ <carlotta.vielmo@gmail.com> 2018-06-11T12:57:13.429Z.
+
+\bigskip
+
+Questo numero non necessita di un mazzo per essere impostato, \\ma solo dei buoni vecchi \textit{CARTA e PENNA!} (E un po' di pazienza) \\Potete provare voi stessi ad impostare un mazzo in questo modo, \\magari anche più grande, per riuscire ad indovinare anche più di 5 carte!
+
+\bigskip
+
+Per chi preferisse il computer anziché carta e penna, vi suggeriamo di provare ad implementare un programma che vi restituisca esattamente il valore e il seme delle 5 (o più) carte che volete indovinare, dando come input il numero di carte rosse presenti.
+
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}
+
+\end{frame}
+
+
+
+
+
+\end{document}
+
+slides.txt
+Visualizzazione di slides.txt.

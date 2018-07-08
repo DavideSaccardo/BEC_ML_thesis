@@ -1,0 +1,7 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduzione}{3}{0}{1}
+\beamer@sectionintoc {2}{Metodi}{9}{0}{2}
+\beamer@sectionintoc {3}{Analisi dati}{16}{0}{3}
+\beamer@sectionintoc {4}{Conclusione}{33}{0}{4}

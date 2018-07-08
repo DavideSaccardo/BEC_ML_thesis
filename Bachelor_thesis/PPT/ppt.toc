@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {italian}
+\select@language {italian}
+\beamer@sectionintoc {1}{Esp card Trick}{2}{0}{1}
+\beamer@sectionintoc {2}{Gilbreath principle}{11}{0}{2}
+\beamer@sectionintoc {3}{5 Cards Trick by Michael Kleber}{21}{0}{3}
+\beamer@sectionintoc {4}{Le sequenze di De Bruijn}{32}{0}{4}

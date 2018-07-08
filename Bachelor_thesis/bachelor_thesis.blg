@@ -1,0 +1,18 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'bachelor_thesis.blg'
+[36] biber:287> INFO - === Sun Jul  8, 2018, 03:32:42
+[119] Biber.pm:348> INFO - Reading 'bachelor_thesis.bcf'
+[251] Biber.pm:742> INFO - Found 9 citekeys in bib section 0
+[256] Biber.pm:3151> INFO - Processing section 0
+[283] Biber.pm:3308> INFO - Looking for bibtex format file 'bibliography/bachelor_thesis.bib' for section 0
+[302] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[329] bibtex.pm:974> INFO - Found BibTeX data source 'bibliography/bachelor_thesis.bib'
+[419] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PLZAJTI_TE/bachelor_thesis.bib_13188.utf8, line 39, warning: 1 characters of junk seen at toplevel
+[419] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PLZAJTI_TE/bachelor_thesis.bib_13188.utf8, line 117, warning: 151 characters of junk seen at toplevel
+[481] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[481] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[481] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'en-US'
+[481] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
+[489] bbl.pm:519> INFO - Writing 'bachelor_thesis.bbl' with encoding 'UTF-8'
+[516] bbl.pm:615> INFO - Output to bachelor_thesis.bbl
+[517] Biber.pm:109> INFO - WARNINGS: 2

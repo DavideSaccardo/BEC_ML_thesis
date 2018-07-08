@@ -1,0 +1,140 @@
+% MAIN DOCUMENT FOR MASTER THESIS
+\documentclass[twoside,english, a4paper, 11pt]{shared/fysbachelor}
+\usepackage[top=1.5in, bottom=1.5in, left=1in, right=1in]{geometry}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\addbibresource{bibliography/bachelor_thesis.bib}
+
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+% TITLE
+\author{Davide Saccardo}
+\title{{\scshape Insert Title}}
+\date{July 2018} 
+
+% LOAD PACKAGES 
+\input{shared/preamble} 
+
+% MAIN DOCUMENT BEGINNING
+\begin{document}
+
+% LOAD COMMANDS
+\input{shared/custom_commands}
+
+\maketitle
+
+%\begin{acknowledgements}
+%		\input{preface/acknowledgements}
+%\end{acknowledgements}
+
+\begin{dedication}
+	\null\vfill
+	\begin{flushright}
+		
+		\vspace{12pt}
+	\end{flushright}
+	\null\vfill
+\end{dedication}
+
+\clearpage
+\cleardoublepage
+
+% ABSTRACT AND ACKNOWLEDGMENTS
+\begin{abstract}
+	\input{preface/abstract}
+	\clearpage
+\end{abstract}
+
+
+\tableofcontents
+\clearpage 
+
+\begin{chapter}{Introduction}
+	\label{chap:intro}
+	  \input{preface/intro}
+\end{chapter}
+
+%% PART I: INTRODUCTORY STUFF
+%\begin{part}{Overview of Bose-Einstein condensations}
+%	\label{part:intro}
+%
+%	% \begin{chapter}{Discretization Effects in Lattice Yang-Mills Theories and Scale Fixing}
+%	% 	\label{chap:problem_intro}
+%	%   	\input{introduction/problem_intro}
+%	% \end{chapter} 
+%\end{part}
+
+
+% PART II: IMPLEMENTATION
+\begin{part}{Implementation}
+	\label{part:implementation}
+	
+	\begin{chapter}{The system}
+		\label{chap:system}
+		\input{implementation/sys}
+	\end{chapter}
+	
+%	\begin{chapter}{Variational Monte-Carlo}
+%  		\label{chap:VMC}
+%  		\input{implementation/VMC}
+%	\end{chapter}
+%
+%	\begin{chapter}{Machine Learning}
+%		\label{chap:ML}
+%		\input{implementation/ML}
+%  \end{chapter}
+\end{part}
+
+
+% PART III: RESULTS
+\begin{part}{Data Analysis and Results}
+	\label{part:results}
+	\begin{chapter}{Non-interacting bosons in a spherical and elliptical harmonic trap}
+	\input{results/results}
+	\end{chapter}
+	
+	\begin{chapter}{Interacting bosons in an elliptical harmonic trap}
+	\input{results/results2}
+	\end{chapter}
+\end{part}
+ 
+% PART IV: CONCLUSIONS
+\begin{part}{Conclusions}
+	\label{part:conclusion}
+	\begin{chapter}{Summary and Outlook}
+		\label{chap:conclusion}
+		\input{conclusion/conclusion}
+	\end{chapter}	
+	% \begin{chapter}{Future Developements}
+	% 	\label{chap:future}
+	% 	\input{conclusion/future}
+	% \end{chapter}
+\end{part}
+
+\cleardoublepage
+
+
+% APPENDICES
+
+
+
+\begin{appendices}
+	
+	\begin{part}{Appendix}
+	\end{part}
+\end{appendices}
+	
+% MAKE BIBLIOGRAPHY
+%\bibliographystyle{unsrt}
+%bibliography/master_thesis_1}
+\printbibliography
+
+ 
+ 
+% AND SO WE END
+\end{document}
