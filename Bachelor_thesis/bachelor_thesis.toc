@@ -1,31 +1,30 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Bose-Einstein condensate}{2}{section.1.1}
-\contentsline {part}{I\hspace {1em}Implementation}{5}{part.1}
-\contentsline {chapter}{\numberline {2}The system}{7}{chapter.2}
-\contentsline {paragraph}{No interaction - spherical trap}{7}{section*.2}
-\contentsline {subparagraph}{No interaction - elliptic trap}{8}{section*.3}
-\contentsline {subparagraph}{Interaction - elliptic trap}{8}{section*.4}
-\contentsline {section}{\numberline {2.1}Methods}{8}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Sampling methods}{9}{subsection.2.1.1}
-\contentsline {subsubsection}{Brute-Force Metropolis algorithm}{10}{section*.5}
-\contentsline {subsubsection}{Importance Sampling Metropolis-Hastings algorithm}{10}{section*.6}
-\contentsline {subsection}{\numberline {2.1.2}Iterative methods to find optimal variational parameters}{11}{subsection.2.1.2}
-\contentsline {subsubsection}{Stochastic Gradient Descent (SGD)}{11}{section*.7}
-\contentsline {subsection}{\numberline {2.1.3}Statistical analysis - blocking method}{12}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Structure of the code}{12}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Trial Wave-function}{13}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}ML trial wave-function}{13}{subsection.2.2.1}
-\contentsline {subsubsection}{Analysis of Hamiltonian}{15}{section*.9}
-\contentsline {paragraph}{Quantum force}{16}{section*.10}
-\contentsline {part}{II\hspace {1em}Data Analysis and Results}{17}{part.2}
-\contentsline {chapter}{\numberline {3}Non-interacting bosons in a spherical and elliptical harmonic trap}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Non-interacting bosons in a spherical harmonic trap}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}BFM algorithm}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}ISMH algorithm}{22}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Energy of non-interacting bosons in a spherical harmonic trap}{25}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Non-interacting bosons in an elliptical harmonic trap}{26}{section.3.2}
-\contentsline {chapter}{\numberline {4}Interacting bosons in an elliptical harmonic trap}{29}{chapter.4}
-\contentsline {part}{III\hspace {1em}Conclusions}{33}{part.3}
-\contentsline {chapter}{\numberline {5}Summary and Outlook}{35}{chapter.5}
-\contentsline {part}{IV\hspace {1em}Appendix}{37}{part.4}
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Bose-Einstein condensate}{10}{section.1.1}
+\contentsline {part}{I\hspace {1em}Implementation}{13}{part.1}
+\contentsline {chapter}{\numberline {2}The System}{15}{chapter.2}
+\contentsline {paragraph}{No interaction - spherical trap}{15}{section*.1}
+\contentsline {subparagraph}{No interaction - elliptical trap}{16}{section*.2}
+\contentsline {subparagraph}{Interaction - elliptical trap}{16}{section*.3}
+\contentsline {section}{\numberline {2.1}Methods}{16}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Sampling methods}{17}{subsection.2.1.1}
+\contentsline {subsubsection}{Brute-Force Metropolis algorithm}{18}{section*.4}
+\contentsline {subsubsection}{Importance Sampling Metropolis-Hastings algorithm}{18}{section*.5}
+\contentsline {subsection}{\numberline {2.1.2}Iterative methods to find optimal variational parameters}{19}{subsection.2.1.2}
+\contentsline {subsubsection}{Stochastic Gradient Descent (SGD)}{19}{section*.6}
+\contentsline {subsection}{\numberline {2.1.3}Statistical analysis - blocking method}{20}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Structure of the code}{21}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Trial Wave-function}{21}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}ML trial wave-function}{21}{subsection.2.2.1}
+\contentsline {subsubsection}{Analysis of Hamiltonian}{23}{section*.8}
+\contentsline {paragraph}{Quantum force}{24}{section*.9}
+\contentsline {part}{II\hspace {1em}Data Analysis and Results}{25}{part.2}
+\contentsline {chapter}{\numberline {3}Non-Interacting Bosons in a Spherical and Elliptical Harmonic Trap}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Non-interacting bosons in a spherical harmonic trap}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}BFM algorithm}{28}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}ISMH algorithm}{30}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Energy of non-interacting bosons in a spherical harmonic trap}{33}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Non-interacting bosons in an elliptical harmonic trap}{34}{section.3.2}
+\contentsline {chapter}{\numberline {4}Interacting Bosons in an Elliptical Harmonic Trap}{37}{chapter.4}
+\contentsline {part}{III\hspace {1em}Conclusions}{41}{part.3}
+\contentsline {chapter}{\numberline {5}Summary and Outlook}{43}{chapter.5}

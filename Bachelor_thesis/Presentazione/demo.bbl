@@ -1,0 +1,228 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global}
+    \entry{carleoSolvingQuantumManybody2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9e5e8a8744bc0102447d5c22c8f12c2e}{%
+           family={Carleo},
+           family_i={C\bibinitperiod},
+           given={Giuseppe},
+           given_i={G\bibinitperiod}}}%
+        {{hash=8c95c0b716ad4a10a2ab4370aca0d0ca}{%
+           family={Troyer},
+           family_i={T\bibinitperiod},
+           given={Matthias},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{fullhash}{0f689722cc172e8884104f907fbb42a2}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0036-8075}
+      \field{journaltitle}{Science}
+      \field{number}{6325}
+      \field{title}{Solving the quantum many-body problem with artificial neural networks}
+      \field{volume}{355}
+      \field{year}{2017}
+      \field{pages}{602\bibrangedash 606}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.aag2302
+      \endverb
+      \verb{eprint}
+      \verb http://science.sciencemag.org/content/355/6325/602.full.pdf
+      \endverb
+      \verb{url}
+      \verb http://science.sciencemag.org/content/355/6325/602
+      \endverb
+    \endentry
+    \entry{DalfString}{article}{}
+      \name{author}{2}{}{%
+        {{hash=49034b8baf5327edd83771bf5a3933ea}{%
+           family={Dalfovo},
+           family_i={D\bibinitperiod},
+           given={F.},
+           given_i={F\bibinitperiod}}}%
+        {{hash=525431f3674f3b0b873062bfc0dc216c}{%
+           family={Stringari},
+           family_i={S\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{0c3d7c26f4e6318c21eced30586223fc}
+      \strng{fullhash}{0c3d7c26f4e6318c21eced30586223fc}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{4}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{04}
+      \field{title}{Bosons in anisotropic traps: Ground state and vortices}
+      \field{volume}{53}
+      \field{year}{1996}
+      \field{pages}{2477\bibrangedash 2485}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.53.2477
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.53.2477
+      \endverb
+    \endentry
+    \entry{vmcarticle}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c2dd77f0d56b949b519c1e21d468df16}{%
+           family={DuBois},
+           family_i={D\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           given_i={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=f3dcb55ce792390e03c8e2f0fae679bf}{%
+           family={Glyde},
+           family_i={G\bibinitperiod},
+           given={H.\bibnamedelimi R.},
+           given_i={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{015a1f1c5cfd24c77444e2cf0d3238fd}
+      \strng{fullhash}{015a1f1c5cfd24c77444e2cf0d3238fd}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{01}
+      \field{title}{Bose-Einstein condensation in trapped bosons: A variational Monte Carlo analysis}
+      \field{volume}{63}
+      \field{year}{2001}
+      \field{pages}{023602}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.63.023602
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.63.023602
+      \endverb
+    \endentry
+    \entry{Giorgini}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3ecb28cfb8344df19ea988dd09315854}{%
+           family={Giorgini},
+           family_i={G\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=499c3b38e820652769ebb35ab7acaad8}{%
+           family={Boronat},
+           family_i={B\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=84a53cb151e0d3533ffdef92b4357ff4}{%
+           family={Casulleras},
+           family_i={C\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{f579a1697b24ca4c2bbcc19903b6e441}
+      \strng{fullhash}{f579a1697b24ca4c2bbcc19903b6e441}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{6}
+      \field{journaltitle}{Phys. Rev. A}
+      \field{month}{12}
+      \field{title}{Ground state of a homogeneous Bose gas: A diffusion Monte Carlo calculation}
+      \field{volume}{60}
+      \field{year}{1999}
+      \field{pages}{5129\bibrangedash 5132}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.60.5129
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevA.60.5129
+      \endverb
+    \endentry
+    \entry{Gruter}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d55979bccac7de80ad14f2ef638cb702}{%
+           family={Grüter},
+           family_i={G\bibinitperiod},
+           given={Peter},
+           given_i={P\bibinitperiod}}}%
+        {{hash=2c38365abb69a8f100e76f0e099050d3}{%
+           family={Ceperley},
+           family_i={C\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+        {{hash=4b7c5a8f6fdadd75caf59cd06f6f8157}{%
+           family={Laloë},
+           family_i={L\bibinitperiod},
+           given={Frank},
+           given_i={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{38d7c6f3359c5a8cb6dd21037ce7f0d9}
+      \strng{fullhash}{38d7c6f3359c5a8cb6dd21037ce7f0d9}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{19}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{11}
+      \field{title}{Critical Temperature of Bose-Einstein Condensation of Hard-Sphere Gases}
+      \field{volume}{79}
+      \field{year}{1997}
+      \field{pages}{3549\bibrangedash 3552}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.79.3549
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.79.3549
+      \endverb
+    \endentry
+  \endsortlist
+  \missing{greenwade93}
+  \missing{Er01}
+  \missing{ConcreteMath}
+  \missing{knuth92}
+  \missing{Simpson}
+\endrefsection
+\endinput
+

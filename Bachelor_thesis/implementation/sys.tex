@@ -1,4 +1,4 @@
-We consider a gas of $N_p$ bosons in spherical and elliptical harmonic oscillator potentials. The interaction between bosons in modeled by the hard-core model as in \cite{vmcarticle}. %We set $\hbar = m = 1$. 
+We consider a gas of $N_p$ bosons in spherical and elliptical harmonic oscillator potentials. The interaction between bosons is modeled by the hard-core model as in \cite{vmcarticle}. %We set $\hbar = m = 1$. 
 The Hamiltonian of the system is 
 \begin{equation}
 H = \sum_{i=1}^{N_p}\left[ -\frac{1}{2}\frac{\hbar^2}{m}\nabla_i^2 + V_{ext}(\textbf{r}_i) \right]+ \sum_{i \neq k} V_{int}(r_{ik}),
@@ -11,7 +11,7 @@ V_{ext}(\textbf{r})=\begin{cases}
 \frac{1}{2}m\left[ \omega_{ho}^2 \left(x^2 + y^2 \right) + \omega_z^2 z^2\right] &\text{Elliptical}
 \end{cases}
 \end{equation*}
-and $V_{int}(r_{ik})$ is the hard-shell interaction potential 
+and $V_{int}(r_{ik})$ is the hard-core interaction potential 
 \begin{equation*}
 V_{int}(r_{ik}) = \begin{cases}
  0, & r_{ik} > a \\
@@ -22,13 +22,13 @@ The quantity $r_{ik} = |\textbf{r}_i-\textbf{r}_k|$ represents the distance betw
 
 \paragraph{No interaction - spherical trap} When we set the interaction to be zero ($V_{int}=0$), we are left with a harmonic oscillator potential, where we consider a spherical shape for simplicity. In this case the solutions are known analytically. In general the energy is given by $E_n=\hbar\omega_{ho}(n+\frac{1}{2})$. The ground state is 
 \begin{equation*}
-E(N_p,D) = \frac{1}{2}\text{D} N_p\ \hbar\omega_{ho}.
+E(N_p,\text{D}) = \frac{1}{2}\text{D} N_p\ \hbar\omega_{ho}.
 \label{analitica}
 \end{equation*}
 where D is the dimension of the system and $N_p$ is the number of particles. This case is useful to benchmark our code at the beginning.
 
-\subparagraph{No interaction - elliptic trap}
-The interaction is still null ($V_{int}=0$), the trap now is considered to be elliptic.\\
+\subparagraph{No interaction - elliptical trap}
+The interaction is still null ($V_{int}=0$), the trap now is considered to be elliptical.\\
 Let us introduce lengths in unit of $a_{ho}=\sqrt{\hbar/(m\omega_{ho)}}$, $r\rightarrow r/a_{ho}$ and energy in units of $\hbar\omega_{ho}$. The Hamiltonian can be rearranged as 
 \begin{equation*}
 \begin{split}
@@ -50,8 +50,8 @@ where $V_{ext}=x^2_k+y^2_k+\lambda^2 z^2_k$. As in \cite{DalfString}, we set $\l
 
 We will use this result to benchmark again our code.
 
-\subparagraph{Interaction - elliptic trap}
-At this point, we turn on the interaction $V_{int}\neq 0$ and we consider an elliptic trap. The Hamiltonian is
+\subparagraph{Interaction - elliptical trap}
+At this point, we turn on the interaction $V_{int}\neq 0$ and we consider an elliptical trap. The Hamiltonian is
 
 \begin{equation}
 \label{ham2}
@@ -66,7 +66,7 @@ To compute the ground state energy of bosons, we use the variational method from
 \label{var_princ}
 E_{gs}\leq \frac{\braket{\Psi_T|H|\Psi_T}}{\braket{\Psi_T|\Psi_T}}\boldsymbol=\frac{\int \Psi_T^{*}(\textbf{X},\boldsymbol{\theta})H\Psi_T(\textbf{X},\mathbf{\theta})d\textbf{X}}{\int \Psi_T^{*}(\textbf{X},\boldsymbol{\theta})\Psi_T(\textbf{X},\boldsymbol{\theta})d\textbf{X}}.
 \end{equation}
-In eq. (\ref{var_princ}), $\mathbf{X}$ represents the particles' positions and $\boldsymbol{\theta}$ represent the variational parameters. With Machine Learning, the variational parameters are the biases of the NN. Hence $\boldsymbol{\theta} = a_1, \dots, a_N,  b_1, \dots, b_M, w_{11}, \dots, w_{NM}$. The quantities $N$ and $M$ are respectively the number of visible and the number of hidden nodes. \\
+In eq. (\ref{var_princ}), $\mathbf{X}$ represents the particles' positions and $\boldsymbol{\theta}$ represent the variational parameters. With Machine Learning, the variational parameters are the biases of the NN. Hence $\boldsymbol{\theta} = a_1, \dots, a_\text{N},  b_1, \dots, b_\text{M}, w_{11}, \dots, w_{\text{NM}}$. The quantities N and M are respectively the number of visible and the number of hidden nodes. \\
 The integral in eq. (\ref{var_princ}) is impossible to evaluate with methods such as Gaussian quadrature in a reasonable amount of time. In such a situation, Monte Carlo methods are needed.
 
 Let us consider a trial wave-function and define the probability density function (PDF) 
@@ -87,15 +87,15 @@ where $N_{MC}$ is the number of Monte Carlo steps.
 
 %With the basic VMC method, our variational parameter is represented by a value which we call $\alpha$. Therefore to find the minimum energy we can use MC methods to compute the mean local energy for different alphas and then see which alphas return the minimum energy. An automated version of this is to use numeric methods that finds function minimums based on the calculations from the MC cycles. For instance conjugate gradient and gradient descent are good iterative methods. We will implement the gradient descent method: the outline is to do some MC cycles to calculate quantities needed for the numeric minimum finder per iteration, eventually the numeric method will find a minimum and return an optimal $\alpha$. Then we can do MC sampling with many more steps on the system with the optimal parameters. This is a proper variational Monte Carlo \cite{morten_book} (VMC) method. 
 
-We will use MC methods to calculate the local energy for a set of randomly initiated $\boldsymbol{\theta}$, then apply the Stochastic Gradient Method (SGD) (more in section \ref{sec_SGD}) to find a new $\boldsymbol{\theta}$ that will give a lower energy. This is an iterative method to find a function minimum. The final result should be a good estimate for the ground state. Since the SGD method has to be applied many times, the number of MC cycles for each SGD iteration should not be very large (to save time). Rather once the SGD cycles have finished we do a run of the final set of parameters with a large number of MC cycles to give a final answer.
+We will use MC methods to calculate the local energy for a set of Gaussian distributed $\boldsymbol{\theta}$, then we will apply the Stochastic Gradient Method (SGD) (more in section \ref{sec_SGD}) to find a new $\boldsymbol{\theta}$ that will give a lower energy. This is an iterative method to find a function minimum. The final result should be a good estimate for the ground state. Since the SGD method has to be applied many times, the number of MC cycles for each SGD iteration should not be very large (to save time). Rather once the SGD cycles have finished we do a run of the final set of parameters with a large number of MC cycles to give a final answer.
 
 However this method will not always be applicable. If the RBM is not able to converge to a precise energy but notably fluctuates, then it is not meaningful to use a final set of variational parameters for a final MC run. Instead the SGD local energy is used. We average the SGD data after equilibration. This will produce a mean local energy that can be used as a final result.
 
 \subsection{Sampling methods}
-We use MC methods to measure system quantities such as energy by generating samples that reproduce more and more precisely the desired distribution. The basic recipe is to choose one particle at random, and propose in a certain way a step for that particle. Then according to a certain rule either accept or decline the move. We will use two methods to propose and accept/reject moves: Brute-Force Metropolis (BFM) and Importance Sampling Metropolis-Hastings (ISMH) \cite{morten_book}. 
+We use MC methods to measure system quantities such as energy by generating samples that reproduce more and more precisely the desired distribution. The basic recipe is to choose one particle randomly, and propose in a certain way a step for that particle. Then according to a certain rule either accept or decline the move. We will use two methods to propose and accept/reject moves: Brute-Force Metropolis (BFM) and Importance Sampling Metropolis-Hastings (ISMH) \cite{morten_book}. 
 
 \subsubsection{Brute-Force Metropolis algorithm}
-The standard Metropolis algorithm (also referred to in this text as Brute-Force Metropolis) follows the basic recipe (referred to as a "brute-force" sampling rule) for choosing new positions given by
+The standard Metropolis algorithm (also referred to as Brute-Force Metropolis in this text) follows the basic recipe (referred to as a "brute-force" sampling rule) for choosing new positions given by
 \begin{equation*}
 x_{k+1} = x_k + Lr,
 \end{equation*}
@@ -104,17 +104,17 @@ where $L$ is a step length and $r$ is a uniformly distributed random variable $\
 r \leq \frac{|\Psi_T(\textbf{r}_{k+1})|^2}{|\Psi_T(\textbf{r}_{k})|^2},
 \label{eq_accept_move}
 \end{equation}
-then we accept the move. If not we decline it. 
+then we accept the move. If it is not verified, we decline it. 
 
 \subsubsection{Importance Sampling Metropolis-Hastings algorithm}
-The issue with BFM is that the algorithm proposes a lot of moves that get rejected. The independence of the sampling rule with respect to the trial wave-function is responsible for this behaviour. These rejected moves are wasted computation time and as such, it becomes desirable to use an algorithm that proposes moves that are more likely to be accepted. For this we will use the Importance Sampling way of generating samples.
+The issue with BFM is that the algorithm proposes a lot of moves that get rejected. The independence of the sampling rule with respect to the trial wave-function is responsible for this behaviour. These rejected moves cause a lot are wasted computation time and as such, it becomes desirable to use an algorithm that proposes moves that are more likely to be accepted. In order to obtain this, we will use the Importance Sampling way of generating samples.
 
-The basic idea behind Importance Sampling is to propose moves as an isotropic diffusion
-process with a drift. A such process obeys Fokker-Planck equation 
+The basic idea behind Importance Sampling is to propose moves corresponding to an isotropic diffusion
+process with a drift. Such a process obeys Fokker-Planck equation 
 \begin{equation*}
 \frac{\partial P}{\partial t} = D\frac{\partial}{\partial x}\left(\frac{\partial}{\partial x}-F\right)P,
 \end{equation*}
-where $P$ is the probability density function of the system, $D$ is the diffusion coefficient and $F$ is the drift force. This equation governs the time evolution of the probability density function for a diffusing system under random forces. In the bosonic system the probability density function is the wave-function itself and we call $F$ the quantum force. The diffusion coefficient assume the value $1/2$ ($D = 1/2$) due to the half factor in the kinetic energy. 
+where $P$ is the probability density function of the system, $D$ is the diffusion coefficient and $F$ is the drift force. This equation governs the time evolution of the probability density function for a diffusing system under random forces. In the bosonic system the probability density function is the wave-function itself and we call $F$ the quantum force. The diffusion coefficient assumes the value $1/2$ ($D = 1/2$) due to the half factor in the kinetic energy. 
 
 The solution of the Fokker-Planck equation is 
 \begin{equation*}
@@ -155,19 +155,19 @@ Therefore we introduce the Stochastic Gradient Descent (SGD) method.
 %An issue with the gradient descent method is that it can only find local minimum without knowing whether it is the global one or not. This can be bypassed by running the algorithm multiple times with different initial guesses. If they converge to the same minimum, it is a good indication that the function only has one local(global) minimum. 
 
 \subsubsection{Stochastic Gradient Descent (SGD)} \label{sec_SGD}
-The method of choice used to optimize our RBM is the Stochastic Gradient Descent. The basic idea is that we want to find the minimum of the local energy as a function of the variational parameters $\boldsymbol{\theta}$. This is done by following the direction of the negative gradient towards the minimum. The set of parameters is $\boldsymbol{\theta} = (a_1...a_N,b_1,...b_M,w_{11},w_{NM})$. The method updates the parameters by 
+The method of choice used to optimize our RBM is the Stochastic Gradient Descent. The basic idea is that we want to find the minimum of the local energy as a function of the variational parameters $\boldsymbol{\theta}$. This is done by following the direction of the negative gradient towards the minimum. The set of parameters is $\boldsymbol{\theta} = (a_1...a_\text{N},b_1,...b_\text{M},w_{11},w_{\text{NM}})$. The method updates the parameters by 
 \begin{align}
 	\label{parameter}
 \boldsymbol{\theta}_{k+1} = \boldsymbol{\theta}_k - \eta \nabla E_L(\boldsymbol{\theta}),
 \end{align}
-where $\eta$ is the learning rate of our RGB. We use a fixed learning rate. There exists methods that use adaptive $\eta$ to speed up or optimize minimum searches. One potential downside to this method is that it is impossible to know whether the method has found a local minimum or the global minimum. In this project it is the global minimum we are interested in.
+where $\eta$ is the learning rate of our RGB. We use a fixed learning rate. There are methods that use adaptive $\eta$ to speed up or optimize minimum searches. One potential downside to this method is that it is impossible to know whether the method has found a local minimum or the global minimum. In this project it is the global minimum we are interested in.
 
-We can find expressions for the parameter gradient of the local energy. The general expression is
+We can find expressions for the gradient of the local energy with respect to the parameters. The general expression is
 \begin{equation}
 \frac{\partial\langle E_{L}\rangle}{\partial \boldsymbol{\theta}_k} = 2 \left[ \langle \frac{E_{L}}{\Psi}   \frac{\partial\Psi}{\partial\boldsymbol{\theta}_k} \rangle - \langle E_{L} \rangle \langle \frac{1}{\Psi}\frac{\partial\Psi}{\partial\boldsymbol{\theta}_k} \rangle  \right].
 \label{eq_energy_gradient}
 \end{equation}
-To compute this value, the parameter derivatives of the wave-function are needed. These can be solved analytically with straightforward methods. For simplicity we define $s_k = \exp(-b_k-\sum_i^M\frac{X_iW_{ik}}{\sigma^2})$. The derivatives are then found as
+To compute this value, the derivatives with respect to the parameters of the wave-function are needed. These can be solved analytically with straightforward methods. For simplicity we define $s_k = \exp(-b_k-\sum_i^M\frac{X_iW_{ik}}{\sigma^2})$. The derivatives are then found as
 \begin{equation*}
 \frac{1}{\Psi}\frac{\partial\Psi}{\partial a_k} = \frac{X_k-a_k}{\sigma^2}
 \label{eq_grad_ak}
@@ -203,13 +203,13 @@ The blocking method is specifically useful for large data sets since the computa
 The code is written in C++, object-oriented in order to allow small changes (such as a different choice of potential) without notching the overall code. The general structure of the algorithm is the following:
   
 \begin{lstlisting}
-- generate paramaters throught random uniform distribution with sigma=0.5 or 0.1 or 0.01
+- generate parameters throught Gaussian distribution with sigma=0.5 or 0.1 or 0.01
 
-for(int cycles = 0; cycles < TotalNumberOfCycles; cycles ++){
+for(int cycles = 0; cycles < TotalNumberOfCycles; cycles ++){ //SGD cycle
 	
 	- Compute trial wave-function and quantum force
 	
-	for (int i = 0; i < numberOfMetropolisSteps; i++) {
+	for (int i = 0; i < numberOfMetropolisSteps; i++) {  //Monte Carlo cycle
 	
 		- Brute-Force Metropolis or Importance Sampling Metropolis-Hastings
 		- Sample the quantities we are interesting in such as energy
@@ -226,185 +226,9 @@ The data are analyzed through python scripts, where the Blocking method is adopt
 \section{Trial Wave-function}
 In this section we show the trial wave-function chosen % for the basic VMC case and the one chosen for the ML case. 
 and we compute interesting quantities (such as local energy, quantum force). 
-%
-%\subsection{VMC trial wave-function}
-%In this case, we consider as wave-function the one proposed in \CIT that is:  the trial wave-function is dependent on the variational parameter $\alpha$
-%\begin{equation}
-%\Psi_T(\mathbf{R},\alpha) = \prod_{i}\phi(\textbf{r}_i,\alpha) \prod_{j < i}f(a, r_{ij}),
-%\label{eq_psi}
-%\end{equation}
-%where $\alpha$ is the variational parameter and $\phi(\textbf{r}_i)$ is the macroscopic wave-function given by
-%\begin{equation}
-%\phi(\mathbf{r}_i) = \exp\left(-\alpha(x_i^2+y_i^2+\beta z_i^2)\right)
-%\label{eqphi}
-%\end{equation}
-%and $f(a,r_{ij})$ is the correlation wave-function (also known as Jastrow factor) that monitors the interaction between particle i and j given by 
-%\begin{equation*}
-%\label{f}
-%f(a,r_{ij}) = \begin{cases}
-%0, & r_{ij} > a \\
-%\left(1-\frac{a}{r_{ij}}\right), & r_{ij} < a.
-%\end{cases}
-%\end{equation*}
-%By setting $u(r_{ij}) = \ln (f(a, r_{ij}))$, we can rewrite the wave-function eq. (\ref{eq_psi}) as 
-%\begin{equation*}
-%\Psi_T(\mathbf{R},\alpha) = \prod_{i}\phi(\textbf{r}_i,\alpha) \exp\left(\sum_{j < i}u(r_{ij})   \right)
-%\end{equation*}
-%
-%
-%\subsubsection{Analysis of Hamiltonian}
-%\label{analysis of hamiltonian}
-%In this section we compute the expression for the Hamiltonian for our trial wave function in both interacting and non cases. The local energy is dependent on the second derivative of the wave-function. The second derivative is a numerically costly process going as $n^2$ flops. Since there is an explicit expression for the trial wave-function the analytic second derivative can be found. This greatly speeds up the program.
-%
-%\paragraph{Non-interacting bosons}\label{section_non_interacting}
-%In the case of no interaction the wavefunction is given without the correlation term as 
-%\begin{equation*}
-%\Psi_T(\textbf{R}) = \prod_{i}\phi(\textbf{r}_i)=\prod_{i}\exp\left[ -\alpha\left(x_i^2+y_i^2+z_i^2 \right) \right].
-%\label{eq_wf_nointer}
-%\end{equation*}
-%In this case the Hamiltonian is set with $V_{int} = 0$. The local energy is then 
-%\begin{equation*}
-%E_{L} = \frac{H\Psi_T(\textbf{R})}{\Psi_T(\textbf{R})} = \frac{1}{\Psi_T(\textbf{R})}\sum_i^{N_p}\left(-\frac{1}{2}\nabla^2 + \frac{1}{2}\omega^2r_i^2\right)\Psi_T(\textbf{R}).
-%\end{equation*}
-%For convenience we introduce the quantities $\textbf{r}^{\beta}_{i}=\textbf{x}_i+\textbf{y}_i + \beta \textbf{z}_i$ and $r^2_{i\beta} = x_i^2 + y_i^2+\beta^2 z_i^2$.
-%%The wavefunctiongradient is then
-%%\begin{equation}
-%%\nabla_i \Psi_T(\textbf{R}) = -2\alpha \textbf{r}_{i\beta} \Psi_T(\textbf{R}).
-%%\end{equation}
-%The laplacian of the wavefunction is 
-%\begin{equation*}
-%\nabla_i^2 \Psi_T(\textbf{R}) = [4\alpha^2 \mathbf{r}^{2}_{k\beta}-2((D-1)\alpha+\alpha\beta)]\Psi_T(\textbf{r})
-%\end{equation*}
-%where d is the dimension of the particles. With the spherical traps ($\beta=\omega_z=1$), the local energy is
-%\begin{equation*}
-%E_L=\sum_k^{N_p}\left[-2\alpha^2 r^{2}_{k} +D\alpha+ \frac{1}{2}\omega^2 r^2_k\right]
-%\end{equation*}
-%
-%At this point, we look at the mean local energy and impose the result $\langle x_i^2 \rangle =\frac{1}{2\omega}$. The dimensionality gives the number of elements in $r^2$, $\langle r^2\rangle =\frac{d}{2\omega}$. The result is 
-%\begin{equation}
-%\langle E_{L} \rangle = \sum_i^{N_p}\left[
-%r_i^2\left(\frac{1}{2}\omega^2 - 2\alpha^2 \right) + \alpha D\right] = N_pD\left(\frac{1}{4} - \frac{\alpha^2}{\omega} + \alpha \right)
-%\label{eq_enegy_noninter}
-%\end{equation}
-%
-%Taking the derivative with respect to $\alpha$ and setting it to zero gives the optimal $\alpha$ parameter:
-%
-%\beq
-%\frac{\partial E_{L}}{\partial \alpha}= N_pD\left( -\frac{2\alpha}{\omega} + 1\right) = 0 \Rightarrow \alpha = \frac{1}{2\omega}
-%\eeq
-%In the case of $\omega = 1$ we get $\alpha = 1/2$. Putting the result into eq. (\ref{eq_enegy_noninter}) gives 
-%
-%\begin{equation}
-%\langle E_{L} \rangle = \frac{N_pD}{2}
-%\label{eq_energy_noninter_result}
-%\end{equation}
-%
-%
-%
-%\paragraph{Interacting bosons}
-%In the interacting case, the trial wavefunction is  
-%\begin{equation*}
-%\Psi_T(\textbf{r}) = \prod_{i}\phi(\textbf{r}_i)\exp\left(\sum_{i<j}(u(r_{ij}))\right),
-%\end{equation*}
-%
-%The derivative with respect to the $k$'th particle coordinate is 
-%\begin{equation}
-%\nabla_k \Psi_T(\textbf{r}) = \nabla\phi(\textbf{r}_k)\prod_{i \neq k }\phi(\textbf{r}_i)\exp\left(\sum_{i < j} u(r_{ij})\right) + \prod_i \phi(\textbf{r}_i)\sum_{j\neq k}\nabla_k u(r_{ij}) \exp\left(\sum_{i < j} u(r_{ij})\right).
-%\label{eqderiv}
-%\end{equation}
-%
-%The second derivative is 
-%\begin{equation*}
-%\begin{split}
-%\nabla_k^2 \Psi_T(\textbf{r}) &= \nabla_k^2 \phi(\textbf{r}_k) \prod_{i \neq k} \phi(\textbf{r}_i)\exp\left(\sum_{i < j} u(r_{ij})\right) + 
-%\nabla_k \phi(\textbf{r}_k) \prod_{i \neq k} \phi(\textbf{r}_i)\sum_{j\neq k}\nabla_k u(r_{ij}) \exp\left(\sum_{i < j} u(r_{ij})\right) \\
-%&+  \nabla_k \phi(\textbf{r}_k) \prod_{i \neq k} \phi(\textbf{r}_i)\sum_{j\neq k}\nabla_k u(r_{ij}) \exp\left(\sum_{i < j} u(r_{ij})\right) +   \prod_{i } \phi(\textbf{r}_i)\sum_{j\neq k}\nabla_k^2 u(r_{ij}) \exp\left(\sum_{i < j} u(r_{ij})\right) \\
-%&+   \prod_{i } \phi(\textbf{r}_i)\left(\sum_{j\neq k}\nabla_k u(r_{ij})\right)^2 \exp\left(\sum_{i < j} u(r_{ij})\right) 
-%\end{split}
-%\end{equation*}
-%
-%The quantity we are interested in is the second derivative divided by the trial wavefunction which is 
-%
-%\begin{equation}
-%\frac{\nabla_k^2 \Psi_T(\textbf{r})}{\Psi_T(\textbf{r})} = \frac{\nabla_k^2\phi(\textbf{r}_k)}{\phi(\textbf{r}_k)} + \frac{2\nabla_k\phi(\textbf{r}_k) \sum_{j\neq k} \nabla_k u(r_{ij})}{\phi(\textbf{r}_k)} + \sum_{j\neq k} \nabla_k^2 u(r_{ij}) + \left(\sum_{j\neq k} \nabla_k u(r_{ij})\right)^2.
-%\label{second_deriv_divided_wf}
-%\end{equation}
-%
-%At this point, we let the gradient to act on $u(r_{ij})$ in eq. (\ref{second_deriv_divided_wf}). By changing variables, we get
-%
-%\begin{equation*}
-%\begin{split}
-%\sum_{j\neq k} \nabla_k u(r_{ij})= \sum_{j\neq k} u'(r_{ij}) \nabla_k r_{ij}= \sum_{j\neq k} u'(r_{ij}) \sum_k \frac{\mathbf{r}_i-\mathbf{r}_j}{|\mathbf{r}_i-\mathbf{r}_j|}\Big(\underbrace{\frac{\partial \mathbf{r}_i}{\partial \mathbf{r}_k}}_{\delta_{ik}} -\underbrace{\frac{\partial \mathbf{r}_j}{\partial \mathbf{r}_k}}_{\delta_{jk}}\Big)= \sum_{j\neq k} u'(r_{kj}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|} \\
-%\end{split}
-%\end{equation*}
-%
-%and
-%
-%\begin{equation*}
-%\begin{split}
-%\sum_{j\neq k}\nabla^{2}_{k}u(r_{ij})&=\sum_{j\neq k}\nabla_{k}\bigg(u'(r_{ij})\frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|}\bigg)=\\
-%&=\sum_{j\neq k}\sum_k \bigg(u''(r_{kj}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|}\frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|}+\frac{\nabla \cdot (\mathbf{r}_k-\mathbf{r}_j) r_{kj}-(\mathbf{r}_k-\mathbf{r}_j)\frac{(\mathbf{r}_k-\mathbf{r}_j)}{|\mathbf{r}_k-\mathbf{r}_j|} (1-\delta_{kj})}{r^{2}_{kj}}u'(r_{ij})\bigg)=\\
-%&=\sum_{j\neq k} u''(r_{kj})+\frac{3r_{kj}-r_{kj}}{r^{2}_{kj}}u'(r_{kj})=\sum_{j\neq k} u''(r_{kj})+\frac{2}{r_{kj}}u'(r_{kj}). \\
-%\end{split}
-%\end{equation*}
-%
-%Therefore eq. (\ref{second_deriv_divided_wf}) becomes
-%\begin{equation}
-%\label{doubled}
-%\begin{split}
-%\frac{\nabla_k^2 \Psi_T(\textbf{r})}{\Psi_T(\textbf{r})} =& \frac{\nabla_k^2\phi(\textbf{r}_k)}{\phi(\textbf{r}_k)} + \frac{2\nabla_k\phi(\textbf{r}_k) \sum_{j\neq k} u'(r_{kj}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|}
-%}{\phi(\textbf{r}_k)} + \sum_{j\neq k} \bigg(u''(r_{kj})+\frac{2}{r_{kj}}u'(r_{kj})\bigg) +\\ &+\sum_{j,i\neq k} u'(r_{kj}) u'(r_{ki}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|} \frac{\mathbf{r}_k-\mathbf{r}_i}{|\mathbf{r}_k-\mathbf{r}_i|}.
-%\end{split}
-%\end{equation}
-%
-%In eq. (\ref{doubled}), we can distinguish two terms: the first one ($\nabla^{2}_{k}\phi(\mathbf{r})_k/\phi(\mathbf{r})_k$), which is independent on the interaction and it the one that we found above when we were deriving the kinetic energy for the non-interacting case, and another formed with the other terms of the double derivative that are dependent on the interaction. We already know that in the case of non-interacting bosons the second term will be zero. We can use the expressions for $\phi(\mathbf{r}_i)$ in eq. (\ref{eqphi}) and $u(r_{ij})$ in eq. (\ref{f}) to obtain \footnote{In the derivation we take into account the presence of $\beta$ for the elliptic trap.}
-%
-%\begin{equation*}
-%\begin{split}
-%&\frac{\nabla_k^2\phi(\textbf{r}_k)}{\phi(\textbf{r}_k)}=4\alpha \mathbf{r}^{\beta}_{k}-2((D-1)\alpha+\alpha\beta)\\
-%&\frac{2\nabla_k\phi(\textbf{r}_k) \sum_{j\neq k} u'(r_{kj}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|}
-%}{\phi(\textbf{r}_k)}=-4\alpha \bigg(\sum_{j\neq k}\frac{\mathbf{r}^{\beta}_{k}\cdot (\mathbf{r}_k-\mathbf{r}_j)}{r_{kj}}\frac{a}{r_{kj}-a} \bigg)\\
-%&\sum_{j\neq k} \bigg(u''(r_{kj})+\frac{2}{r_{kj}}u'(r_{kj})\bigg)=\sum_{j\neq k}\frac{-a}{(r_{kj}-a)^2(r_{kj})^2}\\
-%&\sum_{j,i\neq k} u'(r_{kj}) u'(r_{ki}) \frac{\mathbf{r}_k-\mathbf{r}_j}{|\mathbf{r}_k-\mathbf{r}_j|} \frac{\mathbf{r}_k-\mathbf{r}_i}{|\mathbf{r}_k-\mathbf{r}_i|}=\bigg(\sum_{j\neq k}\frac{a}{r_{kj}(r_{kj}-a)}\bigg)^2.
-%\end{split}
-%\end{equation*}
-%
-%where $\mathcal{D}$ is the number of dimensions and $\mathbf{r}^{\beta}_{k}=(x_k\hat{x}_k+y_k\hat{y}_k+\beta z_k\hat{z}_k)$.
-%
-%Therefore the analytical second derivative is
-%\begin{equation*}
-%\begin{split}
-%\frac{\nabla_k^2 \Psi_T(\textbf{r})}{\Psi_T(\textbf{r})}&=4\alpha \mathbf{r}^{\beta}_{k}-2((D-1)\alpha+\alpha\beta)-4\alpha \bigg(\sum_{j\neq k}\frac{\mathbf{r}^{\beta}_{k}\cdot (\mathbf{r}_k-\mathbf{r}_j)}{r_{kj}}\frac{a}{r_{kj}-a} \bigg)+\sum_{j\neq k}\frac{-a}{(r_{kj}-a)^2(r_{kj})^2}+\\
-%&+\bigg(\sum_{j\neq k}\frac{a}{r_{kj}(r_{kj}-a)}\bigg)^2.
-%\end{split}
-%\end{equation*}
-%
-%By defining 
-%\begin{equation*}
-%\begin{split}
-%&E^{one\ body}_{k}=-2\alpha \mathbf{r}^{\beta}_{k} +((D-1)\alpha+\alpha\beta)\\
-%&E^{interacting}_{k}=2\alpha \bigg(\sum_{j\neq k}\frac{\mathbf{r}^{\beta}_{k}\cdot (\mathbf{r}_k-\mathbf{r}_j)}{r_{kj}}\frac{a}{r_{kj}-a} \bigg)+\frac{1}{2}\sum_{j\neq k}\frac{a}{(r_{kj}-a)^2(r_{kj})^2}-\frac{1}{2}\bigg(\sum_{j\neq k}\frac{a}{r_{kj}(r_{kj}-a)}\bigg)^2,
-%\end{split}
-%\end{equation*}
-%the local energy is
-%
-%\begin{equation*}
-%E_{L}=\sum_{k=1}^{N_P}\bigg(E^{\text{one body}}_k+E^{\text{interacting}}_k+V_{ext}(\mathbf{r}_k)\bigg)+\sum_{k<i}^{N_p} V_{int}(\mathbf{r}_k,\mathbf{r}_i).
-%\end{equation*}
-%
-%\paragraph{Quantum force}
-%The gradient with respect to the $k-$th particle coordinate is found in Eq. \ref{eqderiv}. Dividing by the wave-function gives
-%\begin{equation*}
-%\frac{\nabla_k \Psi_T(\textbf{r})}{\Psi_T(\textbf{r})} =  \frac{\nabla\phi(\textbf{r}_k)}{\phi(\textbf{r}_k)} + \sum_{j\neq k} \nabla_k u_{kj}.
-%\end{equation*}
-%Finally the quantum force acting on particle $i$ is
-%\begin{equation*}
-%\textbf{F}_i = \frac{2\nabla\phi(\textbf{r}_k)}{\phi(\textbf{r}_k)} + \sum_{i\neq k}\nabla_k u_{ik} =  -2\alpha\textbf{r}_i + \sum_{i\neq k}\frac{a}{r_{ik}^2(r_{ik}-a)}(\textbf{r}_i - \textbf{r}_k). 
-%\end{equation*}
-
 
 \subsection{ML trial wave-function}
-We choose to represent our trial wave-function with a set of artificial Neural Networks. We call this way of representing the trail wave-function, Neural-Network Quantum State (NQS) \cite{carleoSolvingQuantumManybody2017}. In particular, the architecture selected is the Restricted Boltzmann Machine. It consists of one layer of visible nodes and one layer of hidden nodes. Each node represents a neuron-like unit where calculations take place: in our case the visible nodes represent the positions of bosons. The nodes are connected to each other across layers, but nodes of the same layer are not linked in the "restricted" machine. In the unrestricted one, connections between hidden nodes are allowed. Therefore there is a connection from every node in the visible layer to every node in the hidden layer (see Fig. (\ref{Fig:draw}) for a representation). 
+We choose to represent our trial wave-function with a set of artificial Neural Networks. We call this way of representing the trial wave-function, Neural-Network Quantum State (NQS) \cite{carleoSolvingQuantumManybody2017}. In particular, the architecture selected is the Restricted Boltzmann Machine. It consists of one layer of visible nodes and one layer of hidden nodes. Each node represents a neuron-like unit where calculations take place: in our case the visible nodes represent the positions of bosons. The nodes are connected to each other across layers, but nodes of the same layer are not linked in the "restricted" machine. In the unrestricted one, connections between hidden nodes are allowed. Therefore there is a connection from every node in the visible layer to every node in the hidden layer (see Fig. (\ref{Fig:draw}) for a representation). 
 
 In general, the goal of the RBM is to learn the probability distribution of the simulated system. In quantum systems the probability distribution is the wave-function $\Psi$. The outputs we wish to produce are the positions of the bosons.  
 
@@ -451,7 +275,7 @@ F_{RBM}(\textbf{X},\textbf{H}) = \frac{1}{Z} \exp(-E(\textbf{X},\textbf{H})),
 \end{equation*}
 where \textbf{X} is the visible nodes and \textbf{H} is the hidden nodes. The quantity $Z$ represents the partition function or normalization constant of the system. 
 
-The quantity $E(\textbf{X},\textbf{H})$ is the function that specifies the relation between the visible and hidden nodes. It is called the energy of the node configuration. This is different from the energy of the quantum mechanical system. The choice of $E(\textbf{X},\textbf{H})$ is the heart of what sort of RBM we have. In the bosonic case, the visible nodes need to take continuous values to properly represent the particle positions. We then look at the Gaussian-Binary RBM. In other cases it might be more desirable to have binary outputs (as Carleo and Troyer used for the Ising Model in \cite{carleoSolvingQuantumManybody2017}). For those cases the Binary-Binary RBM can be used. The Gaussian-Binary RBM is given as 
+The quantity $E(\textbf{X},\textbf{H})$ is the function that specifies the relation between the visible and hidden nodes. It is called the energy of the node configuration. This is different from the energy of the quantum mechanical system. The choice of $E(\textbf{X},\textbf{H})$ defines the kind RBM we have. In the bosonic case, the visible nodes need to take continuous values to properly represent the particle positions. We then look at the Gaussian-Binary RBM. In other cases it might be more desirable to have binary outputs (as Carleo and Troyer used for the Ising Model in \cite{carleoSolvingQuantumManybody2017}). For those cases the Binary-Binary RBM can be used. The Gaussian-Binary RBM is given as 
 \begin{equation*}
 E(\textbf{X},\textbf{H}) = \sum_i^{\text{N}}\frac{(X_i-a_i)^2}{2\sigma} - \sum_j^{\text{M}}b_jH_j + \sum_{ij}^{\text{N,M}}\frac{X_iw_{ij}H_j}{\sigma^2},
 \label{eq_rbm}
@@ -467,7 +291,7 @@ Setting in the Gaussian-Binary RBM gives the final result
 \Psi(\mathbf{X}) = \frac{1}{Z} \exp\bigg[-\sum_i^{\text{N}} \frac{(X_i-a_i)^2}{2\sigma^2}\bigg]\prod_j^{\text{M}} \left(  1 + \exp\bigg[b_j +\sum_i^{\text{N}} \frac{X_iw_{ij}}{\sigma^2}\bigg]\right).
 \label{eq_psi}
 \end{equation*}
-As stated above, the aim of the RBM is to learn a probability. To accomplish this task the bias $\mathbf{a},\mathbf{b}$ and the weights $\mathbf{w_{ij}}$ need to be modified according to a rule, which in our case is to minimize the energy. We will obtain that some connections between nodes are more weighted than others: in fact, this is the utility of Machine Learning i.e. to understand which connections are more favored than others, this skill could be important in some cases to reduce significantly problem that are impossible to deal with at the beginning.
+As stated above, the aim of the RBM is to learn a probability. To accomplish this task, the bias $\mathbf{a},\mathbf{b}$ and the weights $\mathbf{w_{ij}}$ need to be modified according to a rule, which in our case is to minimize the energy. We will obtain that some connections between nodes are more weighted than others: in fact, this is the utility of Machine Learning i.e. to understand which connections are more favored than others, this skill could be important in some cases to reduce significantly problems that are impossible to deal with at the beginning.
 
 \subsubsection{Analysis of Hamiltonian}
 The local energy is defined as 
@@ -480,7 +304,7 @@ Now let us focus on the term $\nabla^2\Psi$. It can be solved analytically. We s
 \nabla_j\Psi(\textbf{X}) = -\left(\sum_{k=j}^{j+\text{D}}\frac{X_k-a_k}{\sigma^2}\hat{\textbf{X}}_k \right) e^{\sum_i^{\text{N}}\frac{(X_i-a_i)^2}{2\sigma^2}} \prod_l^{\text{M}}\left(1+e^{b_L}e^{\sum_i^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\right) \\
 + e^{\sum_i^{\text{N}}\frac{(X_i-a_i)^2}{2\sigma^2}} \sum_ {i=j}^{j+\text{D}}\prod_{l\neq j}^{\text{M}} \left(1+e^{b_l}e^{\sum_i^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\right) e^{b_j}e^{\sum_i^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\sum_ {k=j}^{j+\text{D}}\frac{W_{kl}}{\sigma^2}\hat{\textbf{X}}_k,
 \end{align*}
-where $\hat{\textbf{X}}_k$ is the unit vector in the direction of $\textbf{X}_k$ and D is the number of dimensions. We can collect terms and recognize $\Psi(\textbf{X})$ in the expression above. We then have
+where $\hat{\textbf{X}}_k$ is the unit vector in the direction of $\textbf{X}_k$ and D is the number of dimensions. We can collect terms and recognize $\Psi(\textbf{X})$ in the expression above. We have
 \begin{equation}
 \nabla_j \Psi(\textbf{X}) = \Psi(\textbf{X})\left(  -\sum_{k=j}^{j+\text{D}} \frac{X_k-a_k}{\sigma^2} \hat{\textbf{X}}_k  + \sum_{l}^{\text{M}}\frac{e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}}{1+e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}}  \sum_{k=j}^{j+\text{D}} \frac{W_{kl}}{\sigma^2} \hat{\textbf{X}}_k    \right).
 \label{eq_gradient}
@@ -491,7 +315,7 @@ When finding the laplacian it will be convenient to treat the gradient as one ex
 = \frac{(\nabla_j \Psi(\textbf{X}) )^2}{\Psi(\textbf{X})} + \Psi(\textbf{X})\left[-\frac{\text{D}}{\sigma^2} + \sum_{l=1}^{\text{M}}  \frac{e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}  \Big(1+e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\Big) - e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}}{\Big(1+e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\Big)^2}  \sum_{k=j}^{j+\text{D}} \frac{W^2_{kl}}{\sigma^4}      \right]\\
 = \frac{(\nabla_j \Psi(\textbf{X}) )^2}{\Psi(\textbf{X})} + \Psi(\textbf{X})\left[ -\frac{\text{D}}{\sigma^2} + \sum_{l=1}^{\text{M}}   \frac{e^{b_l}e^{\sum_{i}^{\text{N}}}\frac{X_iW_{il}}{\sigma^2}  }{\Big(1+e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\Big)^2}  \sum_{k=j}^{j+\text{D}} \frac{W^2_{kl}}{\sigma^4}      \right]
 \end{align*}
-Finally we wish look at the laplacian normalized by the wave-function. The result is 
+Finally we wish to look at the laplacian normalized by the wave-function. The result is 
 \begin{equation*}
 \frac{\nabla_j^2\Psi(\textbf{X})}{\Psi(\textbf{X})}= \left(\frac{\nabla_j \Psi(\textbf{X}) }{\Psi(\textbf{X})}\right)^2 - \frac{\text{D}}{\sigma^2}  + \sum_{l=1}^{\text{M}}   \frac{e^{b_l}e^{\sum_{i}^{\text{N}}}\frac{X_iW_{il}}{\sigma^2}  }{\Big(1+e^{b_l}e^{\sum_{i}^{\text{N}}\frac{X_iW_{il}}{\sigma^2}}\Big)^2}  \sum_{k=j}^{j+\text{D}} \frac{W^2_{kl}}{\sigma^4}     
 \label{eq_laplace}

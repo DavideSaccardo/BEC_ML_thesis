@@ -2026,18 +2026,19 @@
     <bcf:datasource type="file" datatype="bibtex">demo.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">DalfString</bcf:citekey>
-    <bcf:citekey order="2">vmcarticle</bcf:citekey>
-    <bcf:citekey order="3">Giorgini</bcf:citekey>
-    <bcf:citekey order="4">Gruter</bcf:citekey>
-    <bcf:citekey order="5">vmcarticle</bcf:citekey>
-    <bcf:citekey order="6">DalfString</bcf:citekey>
-    <bcf:citekey order="7">vmcarticle</bcf:citekey>
-    <bcf:citekey order="8">knuth92</bcf:citekey>
-    <bcf:citekey order="8">ConcreteMath</bcf:citekey>
-    <bcf:citekey order="8">Simpson</bcf:citekey>
-    <bcf:citekey order="8">Er01</bcf:citekey>
-    <bcf:citekey order="8">greenwade93</bcf:citekey>
+    <bcf:citekey order="1">carleoSolvingQuantumManybody2017</bcf:citekey>
+    <bcf:citekey order="2">DalfString</bcf:citekey>
+    <bcf:citekey order="3">vmcarticle</bcf:citekey>
+    <bcf:citekey order="4">Giorgini</bcf:citekey>
+    <bcf:citekey order="5">Gruter</bcf:citekey>
+    <bcf:citekey order="6">vmcarticle</bcf:citekey>
+    <bcf:citekey order="7">DalfString</bcf:citekey>
+    <bcf:citekey order="8">vmcarticle</bcf:citekey>
+    <bcf:citekey order="9">knuth92</bcf:citekey>
+    <bcf:citekey order="9">ConcreteMath</bcf:citekey>
+    <bcf:citekey order="9">Simpson</bcf:citekey>
+    <bcf:citekey order="9">Er01</bcf:citekey>
+    <bcf:citekey order="9">greenwade93</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global" type="entry" sortscheme="none" sortnamekeyscheme="global">
   <bcf:sorting>

@@ -5,37 +5,42 @@
 %\usepackage[utf8]{inputenc}
 \usepackage{fontspec}
 \addbibresource{bibliography/bachelor_thesis.bib}
-
+\usepackage{titling}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{changepage}
 \usepackage{afterpage}
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
-% TITLE
-\author{Davide Saccardo}
-\title{{\scshape Insert Title}}
-\date{July 2018} 
+%% TITLE
+%\author{Davide Saccardo}
+%\title{{\scshape Insert Title}}
+%\date{July 2018} 
 
-% LOAD PACKAGES 
+%% LOAD PACKAGES 
 \input{shared/preamble} 
+\begin{document}
+\input{shared/title}
 
 % MAIN DOCUMENT BEGINNING
-\begin{document}
+
 
 % LOAD COMMANDS
 \input{shared/custom_commands}
 
-\maketitle
+%\maketitle
 
 %\begin{acknowledgements}
 %		\input{preface/acknowledgements}
 %\end{acknowledgements}
-
+\cleardoublepage
 \begin{dedication}
 	\null\vfill
 	\begin{flushright}
-		
+		To whoever helped me to see a light,\\ when I was able to see only darkness.
 		\vspace{12pt}
 	\end{flushright}
 	\null\vfill
@@ -74,7 +79,7 @@
 \begin{part}{Implementation}
 	\label{part:implementation}
 	
-	\begin{chapter}{The system}
+	\begin{chapter}{The System}
 		\label{chap:system}
 		\input{implementation/sys}
 	\end{chapter}
@@ -94,11 +99,11 @@
 % PART III: RESULTS
 \begin{part}{Data Analysis and Results}
 	\label{part:results}
-	\begin{chapter}{Non-interacting bosons in a spherical and elliptical harmonic trap}
+	\begin{chapter}{Non-Interacting Bosons in a Spherical and Elliptical Harmonic Trap}
 	\input{results/results}
 	\end{chapter}
 	
-	\begin{chapter}{Interacting bosons in an elliptical harmonic trap}
+	\begin{chapter}{Interacting Bosons in an Elliptical Harmonic Trap}
 	\input{results/results2}
 	\end{chapter}
 \end{part}
@@ -123,11 +128,11 @@
 
 
 
-\begin{appendices}
-	
-	\begin{part}{Appendix}
-	\end{part}
-\end{appendices}
+%\begin{appendices}
+%	
+%	\begin{part}{Appendix}
+%	\end{part}
+%\end{appendices}
 	
 % MAKE BIBLIOGRAPHY
 %\bibliographystyle{unsrt}

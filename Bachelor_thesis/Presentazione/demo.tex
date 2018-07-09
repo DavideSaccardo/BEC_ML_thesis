@@ -40,8 +40,89 @@
 
 \end{frame}
 
+\begin{frame}[fragile]{Ingredienti base}
+	\begin{enumerate}
+			\item Metodi Variational Monte Carlo per calcolare l'energia
+			\item Funzione d'onda di prova rappresentata con Restricted Boltzmann Machine
+			\item Parametri variazionali modificati con Stochastic Gradient Descent
+	\end{enumerate}
+\end{frame}
+
 \begin{frame}[fragile]{Machine Learning}
-	lol
+	\begin{itemize}
+		\item Set of algorithms to give computers the ability to learn to recognize images (e.g. plants, handwritten numbers) or data distribution
+		\item Huge success in the last years: Google Translate, \dots
+		\item Recent applications in physics with many-body problems such as Ising Model and Heisenberg model \footfullcite{carleoSolvingQuantumManybody2017}, with encouraging results
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Machine Learning}
+	We represent our trial wave-function with a set of artificial Neural Networks. We call this way of representing the trail wave-function, Neural-Network Quantum State (NQS). The architecture selected is the Restricted Boltzmann Machine. The goal of the RBM is to learn the probability distribution of the simulated system. In quantum systems the probability distribution is the wave-function $\Psi$.
+	
+	\begin{figure}
+		\centering
+		\resizebox{10cm}{3.3333cm}{
+			\begin{tikzpicture}
+		\draw[black,fill=gray,fill opacity=0.2] (-4.5,0) circle (15pt) node[text=black, fill opacity=1] {$H_1$};
+		\draw[black,fill=gray,fill opacity=0.2] (-1.5,0) circle (15pt) node[text=black, fill opacity=1] {$H_2$};
+		\draw[black,fill=gray,fill opacity=0.2] (1.5,0) circle (15pt) node[text=black, fill opacity=1] {$H_3$};
+		\node[draw, white, text=black] at (3.25,0) {$\dots$};
+		\node[draw, white, text=black] at (8,0) {Hidden layer};
+		\node[draw, white, text=black] at (8.0,-3) {Visible layer};
+		\draw[black,fill=gray,fill opacity=0.2] (5,0) circle (15pt) node[text=black, fill opacity=1] {$H_\text{M}$};
+		\draw[black,fill=green,fill opacity=0.2] (-4.5,-3) circle (25pt) node[text=black, fill opacity=1, align= center] {\LARGE $X_1$};
+		\draw[black,fill=green,fill opacity=0.2] (-1.5,-3) circle (25pt) node[text=black, fill opacity=1] {\LARGE$X_2$};
+		\draw[black,fill=green,fill opacity=0.2] (1.5,-3) circle (25pt) node[text=black, fill opacity=1] {\LARGE$X_3$};
+		\node[draw, white, text=black] at (3.25,-3) {$\dots$};
+		\draw[black,fill=green,fill opacity=0.2] (5,-3) circle (25pt) node[text=black, fill opacity=1] {\LARGE$X_\text{N}$};
+		\draw[black,->] (-4.5,-0.52) to (-1.5,-2.1);
+		\draw[black,->] (-4.5,-0.52) to (-4.5,-2.1);
+		\draw[black,->] (-4.5,-0.52) to (1.5,-2.1);
+		\draw[black,->] (-4.5,-0.52) to (5,-2.1);
+		\draw[black,->] (-1.5,-0.52) to (-1.5,-2.1);
+		\draw[black,->] (-1.5,-0.52) to (-4.5,-2.1);
+		\draw[black,->] (-1.5,-0.52) to (1.5,-2.1);
+		\draw[black,->] (-1.5,-0.52) to (5,-2.1);
+		\draw[black,->] (1.5,-0.52) to (-1.5,-2.1);
+		\draw[black,->] (1.5,-0.52) to (-4.5,-2.1);
+		\draw[black,->] (1.5,-0.52) to (1.5,-2.1);
+		\draw[black,->] (1.5,-0.52) to (5,-2.1);
+		\draw[black,->] (5,-0.52) to (-1.5,-2.1);
+		\draw[black,->] (5,-0.52) to (-4.5,-2.1);
+		\draw[black,->] (5,-0.52) to (1.5,-2.1);
+		\draw[black,->] (5,-0.52) to (5,-2.1);
+		\end{tikzpicture}
+	}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Machine Learning}
+	
+	The joint probability distribution of the RBM is defined as 
+	\begin{equation*}
+	F_{RBM}(\textbf{X},\textbf{H}) = \frac{1}{Z} \exp(-E(\textbf{X},\textbf{H})),
+	\end{equation*}
+	where \textbf{X} is the visible nodes and \textbf{H} is the hidden nodes. The quantity $Z$ represents the partition function or normalization constant of the system. 
+	
+	The quantity $E(\textbf{X},\textbf{H})$ is the function that specifies the relation between the visible and hidden nodes. It is called the energy of the node configuration. The choice of $E(\textbf{X},\textbf{H})$ is the heart of what sort of RBM we have.
+	
+\end{frame}
+
+\begin{frame}[fragile]{Machine Learning}
+	There are several types of RBM. Since, in our case, the visible nodes need to take continuous values, we choose the Gaussian-Binary RBM:
+	\begin{equation*}
+	E(\textbf{X},\textbf{H}) = \sum_i^{\text{N}}\frac{(X_i-a_i)^2}{2\sigma} - \sum_j^{\text{M}}b_jH_j + \sum_{ij}^{\text{N,M}}\frac{X_iw_{ij}H_j}{\sigma^2},
+	\label{eq_rbm}
+	\end{equation*} 
+	To represent the wave-function, we use the so-called "marginal PDF" found by summing over all the hidden nodes:
+	\begin{equation*}
+	\Psi(\textbf{X}) = \sum_HF_{RBM}(\textbf{X},\textbf{H}) = \frac{1}{Z}\sum_H\exp(-E(\textbf{X},\textbf{H})).
+	\end{equation*}
+	Setting in the Gaussian-Binary RBM gives the final result
+	\begin{equation*}
+	\Psi(\mathbf{X}) = \frac{1}{Z} \exp\bigg[-\sum_i^{\text{N}} \frac{(X_i-a_i)^2}{2\sigma^2}\bigg]\prod_j^{\text{M}} \left(  1 + \exp\bigg[b_j +\sum_i^{\text{N}} \frac{X_iw_{ij}}{\sigma^2}\bigg]\right).
+	\label{eq_psi}
+	\end{equation*}
 \end{frame}
 
 
@@ -51,8 +132,8 @@
  	\item Predetto da A. Einstein nel 1925 seguendo il lavoro del fisico indiano S. N. Bose (1924) sulla statistica dei bosoni. 
  	\item Verificati sperimentalmente nel 1995 dal team di Cornell e Wieman a Boulder con $^{87}$Rb e da Ketterle al MIT con $^{23}$Na raffreddati a temperature di $100\ \si{\nano\kelvin}$ attraverso laser cooling e evaporative cooling in trappole magneto-ottiche. Premio Nobel 2001.
 \end{itemize}
- 
 \end{frame}
+ 
 
 \begin{frame}[fragile]{Gross-Pitaevskii equation}
 	Negli esperimenti sono stati utilizzati gas diluiti (e.g. atomi alcalini) e non uniformi perchè confinati in trappole magneto-ottiche. L'equazione di riferimento è l'equazione di Gross-Pitaevskii (GP): 
