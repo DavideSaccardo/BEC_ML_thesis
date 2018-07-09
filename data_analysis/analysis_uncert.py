@@ -60,12 +60,25 @@ def block(x):
 
 sns.set();
 
-filename1 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_1_3_3/Np_1_Nd_3_Hidden_3_cycle_*.dat'), key=lambda y: y.lower())
-filename2 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_10_3_8/Np_10_Nd_3_Hidden_8_cycle_*.dat'), key=lambda y: y.lower())
-filename3 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_20_3_25/Np_20_Nd_3_Hidden_25_cycle_*.dat'), key=lambda y: y.lower())
-filename4 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_30_3_27/Np_30_Nd_3_Hidden_27_cycle_*.dat'), key=lambda y: y.lower())
-filename5 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_40_3_30/Np_40_Nd_3_Hidden_32_cycle_*.dat'), key=lambda y: y.lower())
-filename6 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_50_3_40/Np_50_Nd_3_Hidden_40_cycle_*.dat'), key=lambda y: y.lower())
+#filename1 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_100_3_60/Np_100_Nd_3_Hidden_60_cycle_*.dat'), key=lambda y: y.lower())
+#filename1 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_1_3_3/Np_1_Nd_3_Hidden_3_cycle_*.dat'), key=lambda y: y.lower())
+#filename1 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_10_3_8/Np_10_Nd_3_Hidden_8_cycle_*.dat'), key=lambda y: y.lower())
+#filename2 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_20_3_25/Np_20_Nd_3_Hidden_25_cycle_*.dat'), key=lambda y: y.lower())
+#filename3 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_30_3_27/Np_30_Nd_3_Hidden_27_cycle_*.dat'), key=lambda y: y.lower())
+#filename4 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_40_3_30/Np_40_Nd_3_Hidden_32_cycle_*.dat'), key=lambda y: y.lower())
+#filename5 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_50_3_40/Np_50_Nd_3_Hidden_40_cycle_*.dat'), key=lambda y: y.lower())
+
+filename1 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Data_80_3_56/Np_80_Nd_3_Hidden_56_cycle_*.dat'), key=lambda y: y.lower())
+filename2 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_1_Nd_3_Hidden_1_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename3 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_1_Nd_3_Hidden_2_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename4 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_1_Nd_3_Hidden_3_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename5 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_1_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename6 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_2_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename7 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_3_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename8 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_4_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename9 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_5_cycle_*_fix.dat'), key=lambda y: y.lower())
+filename10 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/ellittico/Np_2_Nd_3_Hidden_6_cycle_*_fix.dat'), key=lambda y: y.lower())
+
 
 #filename2 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Non_interacting/importance/Np_2_Nd_2_Hidden_2_Importance_timestep_0.010000_cycle_*.dat'), key=lambda y: y.lower())
 #filename3 = ns.natsorted(glob.glob('/home/dsacco/Desktop/thesis/Non_interacting/importance/Np_2_Nd_2_Hidden_2_Importance_timestep_0.100000_cycle_*.dat'), key=lambda y: y.lower())
@@ -85,42 +98,73 @@ sigma=[];
 z2=[]
 Q2=[]
 z2=np.asarray(z2)
-z2.resize(1200)
+z2.resize(600)
 Q2=np.asarray(Q2)
-Q2.resize(1200)
+Q2.resize(600)
 
 sigma=[];
 z3=[]
 Q3=[]
 z3=np.asarray(z3)
-z3.resize(1200)
+z3.resize(600)
 Q3=np.asarray(Q3)
-Q3.resize(1200)
+Q3.resize(600)
 
 sigma=[];
 z4=[]
 Q4=[]
 z4=np.asarray(z4)
-z4.resize(1200)
+z4.resize(600)
 Q4=np.asarray(Q4)
-Q4.resize(1200)
+Q4.resize(600)
 
 sigma=[];
 z5=[]
 Q5=[]
 z5=np.asarray(z5)
-z5.resize(1200)
+z5.resize(600)
 Q5=np.asarray(Q5)
-Q5.resize(1200)
+Q5.resize(600)
 
 sigma=[];
 z6=[]
 Q6=[]
 z6=np.asarray(z6)
-z6.resize(1200)
+z6.resize(600)
 Q6=np.asarray(Q6)
-Q6.resize(1200)
+Q6.resize(600)
 
+sigma=[];
+z7=[]
+Q7=[]
+z7=np.asarray(z7)
+z7.resize(600)
+Q7=np.asarray(Q7)
+Q7.resize(600)
+
+sigma=[];
+z8=[]
+Q8=[]
+z8=np.asarray(z8)
+z8.resize(600)
+Q8=np.asarray(Q8)
+Q8.resize(600)
+
+sigma=[];
+z9=[]
+Q9=[]
+z9=np.asarray(z9)
+z9.resize(600)
+Q9=np.asarray(Q9)
+Q9.resize(600)
+
+sigma=[];
+z10=[]
+Q10=[]
+z10=np.asarray(z10)
+z10.resize(600)
+Q10=np.asarray(Q10)
+Q10.resize(600)
 
 i=0;
 
@@ -133,11 +177,15 @@ for f in filename1:
     Q1[i]=u**.5;
     i=i+1;
 
+
+print(stat.mean(z1[200:len(z1)]))
+print(np.sqrt(np.sum(np.square(Q1[200:len(Q1)]))/(len(Q1)-200)))
+
 i=0;
 
 for f in filename2:
     x=np.loadtxt(fname=f);
-    x=x[len(x)-65536:len(x)]
+    x=x[len(x)-262144:len(x)]
     y=stat.mean(x[:,1]);
     z2[i]=y
     u=block(x[:,1]);
@@ -146,20 +194,28 @@ for f in filename2:
 
 i=0;
 
+print(stat.mean(z2[200:len(z2)]))
+print(np.sqrt(np.sum(np.square(Q2[200:len(Q2)]))/(len(Q2)-200)))
+
+
 for f in filename3:
     x=np.loadtxt(fname=f);
-    x=x[len(x)-65536:len(x)]
+    x=x[len(x)-262144:len(x)]
     y=stat.mean(x[:,1]);
     z3[i]=y
     u=block(x[:,1]);
     Q3[i]=u**.5;
     i=i+1;
-    
+
 i=0;
+
+print(stat.mean(z3[200:len(z3)]))
+print(np.sqrt(np.sum(np.square(Q1[200:len(Q3)]))/(len(Q3)-200)))
+
 
 for f in filename4:
     x=np.loadtxt(fname=f);
-    x=x[len(x)-65536:len(x)]
+    x=x[len(x)-262144:len(x)]
     y=stat.mean(x[:,1]);
     z4[i]=y
     u=block(x[:,1]);
@@ -168,52 +224,173 @@ for f in filename4:
 
 i=0;
 
+print(stat.mean(z4[200:len(z4)]))
+print(np.sqrt(np.sum(np.square(Q4[200:len(Q4)]))/(len(Q4)-200)))
+
+
 for f in filename5:
     x=np.loadtxt(fname=f);
-    x=x[len(x)-65536:len(x)]
+    x=x[len(x)-262144:len(x)]
     y=stat.mean(x[:,1]);
     z5[i]=y
     u=block(x[:,1]);
     Q5[i]=u**.5;
     i=i+1;
-    
 
 i=0;
 
+print(stat.mean(z5[200:len(z5)]))
+print(np.sqrt(np.sum(np.square(Q5[200:len(Q1)]))/(len(Q5)-200)))
+
+
 for f in filename6:
     x=np.loadtxt(fname=f);
-    x=x[len(x)-65536:len(x)]
+    x=x[len(x)-262144:len(x)]
     y=stat.mean(x[:,1]);
     z6[i]=y
     u=block(x[:,1]);
     Q6[i]=u**.5;
     i=i+1;
+
+i=0;
+
+print(stat.mean(z6[200:len(z6)]))
+print(np.sqrt(np.sum(np.square(Q6[200:len(Q6)]))/(len(Q6)-200)))
+
+
+for f in filename7:
+    x=np.loadtxt(fname=f);
+    x=x[len(x)-262144:len(x)]
+    y=stat.mean(x[:,1]);
+    z7[i]=y
+    u=block(x[:,1]);
+    Q7[i]=u**.5;
+    i=i+1;
+
+i=0;
+
+print(stat.mean(z7[200:len(z7)]))
+print(np.sqrt(np.sum(np.square(Q7[200:len(Q7)]))/(len(Q7)-200)))
+
+for f in filename8:
+    x=np.loadtxt(fname=f);
+    x=x[len(x)-262144:len(x)]
+    y=stat.mean(x[:,1]);
+    z8[i]=y
+    u=block(x[:,1]);
+    Q8[i]=u**.5;
+    i=i+1;
+
+i=0;
+
+print(stat.mean(z8[200:len(z8)]))
+print(np.sqrt(np.sum(np.square(Q8[200:len(Q8)]))/(len(Q8)-200)))
+
+for f in filename9:
+    x=np.loadtxt(fname=f);
+    x=x[len(x)-262144:len(x)]
+    y=stat.mean(x[:,1]);
+    z9[i]=y
+    u=block(x[:,1]);
+    Q9[i]=u**.5;
+    i=i+1;
+
+i=0;
+
+print(stat.mean(z9[200:len(z9)]))
+print(np.sqrt(np.sum(np.square(Q9[200:len(Q9)]))/(len(Q9)-200)))
+
+for f in filename10:
+    x=np.loadtxt(fname=f);
+    x=x[len(x)-262144:len(x)]
+    y=stat.mean(x[:,1]);
+    z10[i]=y
+    u=block(x[:,1]);
+    Q10[i]=u**.5;
+    i=i+1;
+    
+print(stat.mean(z10[200:len(z10)]))
+print(np.sqrt(np.sum(np.square(Q10[200:len(Q10)]))/(len(Q10)-200)))
+
+#i=0;
 #
+#for f in filename3:
+#    x=np.loadtxt(fname=f);
+#    x=x[len(x)-65536:len(x)]
+#    y=stat.mean(x[:,1]);
+#    z3[i]=y
+#    u=block(x[:,1]);
+#    Q3[i]=u**.5;
+#    i=i+1;
+#    
+#i=0;
+#
+#for f in filename4:
+#    x=np.loadtxt(fname=f);
+#    x=x[len(x)-65536:len(x)]
+#    y=stat.mean(x[:,1]);
+#    z4[i]=y
+#    u=block(x[:,1]);
+#    Q4[i]=u**.5;
+#    i=i+1;
+#
+#i=0;
+#
+#for f in filename5:
+#    x=np.loadtxt(fname=f);
+#    x=x[len(x)-65536:len(x)]
+#    y=stat.mean(x[:,1]);
+#    z5[i]=y
+#    u=block(x[:,1]);
+#    Q5[i]=u**.5;
+#    i=i+1;
+#    
+
+#i=0;
+
 #print(stat.mean(z1[100:len(z1)]))
 #print(stat.mean(Q1[100:len(Q1)])/np.sqrt(len(Q1)-100))
 
 #Averages and uncertanties for N particles.
-print(stat.mean(z1[200:len(z1)]))
-print(np.sqrt(np.sum(np.square(Q1[200:len(Q1)]))/(len(Q1)-200)))
-#print(block(Q1[len(Q1)-1024:len(Q1)])**.5)
-
-print(stat.mean(z2[200:len(z2)]))
-print(np.sqrt(np.sum(np.square(Q2[200:len(Q2)]))/(len(Q2)-200)))
-#print(block(Q2[len(Q2)-1024:len(Q2)])**.5)
-
-print(stat.mean(z3[200:len(z3)]))
-print(np.sqrt(np.sum(np.square(Q3[200:len(Q3)]))/(len(Q3)-200)))
-#print(block(Q3[len(Q3)-1024:len(Q3)])**.5)
-
-print(stat.mean(z4[200:len(z4)]))
-print(np.sqrt(np.sum(np.square(Q4[200:len(Q4)]))/(len(Q4)-200)))
-#print(block(Q4[len(Q4)-1024:len(Q4)])**.5)
-
-print(stat.mean(z5[200:len(z5)]))
-print(np.sqrt(np.sum(np.square(Q5[200:len(Q5)]))/(len(Q5)-200)))
-#print(block(Q5[len(Q5)-1024:len(Q5)])**.5)
-
-print(stat.mean(z6[200:len(z6)]))
-print(np.sqrt(np.sum(np.square(Q6[200:len(Q6)]))/(len(Q6)-200)))
-#print(block(Q6[len(Q6)-1024:len(Q6)])**.5)
+#print(stat.mean(z1[200:len(z1)]))
+#print(np.sqrt(np.sum(np.square(Q1[200:len(Q1)]))/(len(Q1)-200)))
+#
+##print(stat.mean(z1[250:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[250:len(Q1)]))/(len(Q1)-250)))
+##
+##print(stat.mean(z1[300:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[300:len(Q1)]))/(len(Q1)-300)))
+##
+##print(stat.mean(z1[350:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[350:len(Q1)]))/(len(Q1)-350)))
+##
+##print(stat.mean(z1[400:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[400:len(Q1)]))/(len(Q1)-400)))
+##
+##print(stat.mean(z1[400:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[400:len(Q1)]))/(len(Q1)-400)))
+##
+##print(stat.mean(z1[600:len(z1)]))
+##print(np.sqrt(np.sum(np.square(Q1[600:len(Q1)]))/(len(Q1)-600)))
+#
+#
+#print(stat.mean(z2[200:len(z2)]))
+#print(np.sqrt(np.sum(np.square(Q2[200:len(Q2)]))/(len(Q2)-200)))
+##print(block(Q2[len(Q2)-1024:len(Q2)])**.5)
+#
+#print(stat.mean(z3[200:len(z3)]))
+#print(np.sqrt(np.sum(np.square(Q3[200:len(Q3)]))/(len(Q3)-200)))
+##print(block(Q3[len(Q3)-1024:len(Q3)])**.5)
+#
+#print(stat.mean(z4[200:len(z4)]))
+#print(np.sqrt(np.sum(np.square(Q4[200:len(Q4)]))/(len(Q4)-200)))
+##print(block(Q4[len(Q4)-1024:len(Q4)])**.5)
+#
+#print(stat.mean(z5[200:len(z5)]))
+#print(np.sqrt(np.sum(np.square(Q5[200:len(Q5)]))/(len(Q5)-200)))
+##print(block(Q5[len(Q5)-1024:len(Q5)])**.5)
+#
+#print(stat.mean(z6[200:len(z6)]))
+#print(np.sqrt(np.sum(np.square(Q6[200:len(Q6)]))/(len(Q6)-200)))
+##print(block(Q6[len(Q6)-1024:len(Q6)])**.5)
 
