@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "../particle.h"
+//#include "../particle.h"
 
 class InitialState {
 
